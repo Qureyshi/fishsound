@@ -1,12 +1,13 @@
 import React from 'react'
 import styles from './styles.module.scss';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
     <>
-         <div className={styles.footer}>
-          <div className={styles["rectangle-2"]}></div>
-          <div className={styles["frame-494"]}>
+         <div  className={styles["footer"]}>
+ 
+ 
             <div className={styles["footer-text"]}>
               <div className={styles["section-title"]}>Saytın xəritəsi</div>
               <div className={styles["link"]}>Ana səhifə</div>
@@ -37,14 +38,21 @@ export default function Footer() {
                 <div className={styles["checkbox-label"]}>Qaydalar və şərtlərlə razıyam</div>
               </div>
             </div>
+
+             <Image
+                    className={styles["logo"]}
+                    src="/images/logo/logo0.svg"
+                    alt="Logo"
+                    width={100}
+                    height={100}
+                  />
           
-            <img className={styles.logo} src="logo0.svg" alt="Logo" />
-          
-            <div className={styles["copyright"]}>
+            
+           
+        </div>
+        <div className={styles["copyright"]}>
               Fish Sound 2025. Bütün hüquqlar qorunur.
             </div>
-          </div>
-        </div>
 
     </>
   )

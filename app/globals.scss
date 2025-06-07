@@ -9,8 +9,13 @@ body {
   font-family: Arial, sans-serif;
   background: var(--black-100, #000000);
   color: white;
-  padding: 0 200px;
+  padding: 0 150px;
   margin: 0;
- 
+  @include lg_tablet{
+    padding: 0 30px;
+  }
+  @include mobile{
+    padding: 0 10px;
+  }
 }
 

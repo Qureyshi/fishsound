@@ -9,7 +9,7 @@ import Masonry from '@/components/common/masonry';
 export default function BusinessContainer() {
   return (
     <>
-      <Navbar/>
+       <Navbar/>
       <PageHeader title="Biznes tipləri" /> 
       
 
@@ -60,7 +60,7 @@ export default function BusinessContainer() {
 
 
 
-
+    <Footer/> 
 
 
 

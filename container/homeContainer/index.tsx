@@ -8,7 +8,7 @@ import Image from 'next/image';
 export default function HomeContainer() {
   return (
     <>
-    <Navbar />
+    <Navbar/>
 
   <div className={styles["header_container"]}>
     <div className={styles["home_header"]}>
@@ -178,7 +178,7 @@ export default function HomeContainer() {
         </div>
       </div>
 
-       
+       <Footer/>
     </>
   );
 }

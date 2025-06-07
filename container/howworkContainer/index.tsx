@@ -8,7 +8,7 @@ import PageHeader from '@/components/common/pageheader';
 export default function HowworkContainer() {
   return (
     <>
-      <Navbar/>
+       <Navbar/>
       <PageHeader title="Necə işləyir?" />
       
 
@@ -259,8 +259,8 @@ export default function HowworkContainer() {
 
 
       </div>
-
-      <Footer />
+    <Footer/>
+       
     </>
   );
 }

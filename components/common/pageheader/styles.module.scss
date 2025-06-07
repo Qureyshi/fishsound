@@ -10,6 +10,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include tablet{
+    padding: 40px;
+  }
+  @include mobile{
+    padding: 20px;
+  }
+
+  
 }
 
 .circle{
@@ -17,6 +26,10 @@
   width: 50px;
   height: 50px;
   border-radius: 50px;
+  @include tablet{
+    width: 20px;
+  height: 20px;
+  }
 }
 
  
@@ -35,8 +48,14 @@
   font-size: 55px;
   font-weight: 700;
   position: relative;
-  height: 54px;
+  
   display: flex;
   align-items: center;
   justify-content: center;
+  @include tablet{
+    font-size: 45px;
+  }
+  @include mobile{
+    font-size: 35px;
+  }
 }

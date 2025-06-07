@@ -2,16 +2,25 @@
 @use "@/styles/variable.module.scss" as *;
 
 
-$columns: 3;
+ 
 $gap: 1rem;
 
 .masonry-grid {
-  column-count: $columns;
+  column-count: 3;
   column-gap: $gap;
 
-  > * {
+  @include tablet {
+      column-count: 1; 
+   }
+
+   > * {
     break-inside: avoid;
     margin-bottom: $gap;
+
+    
+
+
+
   }
 }
  

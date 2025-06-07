@@ -3,6 +3,7 @@ import styles from './styles.module.scss';
 import Navbar from '@/components/common/navbar';
 import PageHeader from '@/components/common/pageheader';
 import PricingCard from '@/components/common/pricingcard';
+import Footer from '@/components/common/footer';
 
 
 export default function PricingContainer() {
@@ -54,7 +55,7 @@ export default function PricingContainer() {
    
 
     
-
+      <Footer/>
 
 
 
