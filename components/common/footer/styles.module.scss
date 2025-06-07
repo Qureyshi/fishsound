@@ -1,0 +1,219 @@
+@use "@/styles/mixin.module.scss" as *;
+@use "@/styles/variable.module.scss" as *;
+
+$white-100: #ffffff;
+$white-200: #b2b2b2;
+$white-300: #c9c9c9;
+$white-400: #e3e3e3;
+$blue-100: #0d9eec;
+
+.footer {
+  box-sizing: border-box;
+
+  * {
+    box-sizing: inherit;
+  }
+
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 328px;
+  position: relative;
+
+  .card-2 {
+    position: absolute;
+    inset: 0;
+
+    .rectangle-2 {
+      background: $blue-100;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0%;
+      left: 0%;
+      bottom: 0%;
+      top: 0%;
+    }
+  }
+
+  .frame-494 {
+    display: flex;
+    flex-direction: row;
+    gap: 79px;
+    row-gap: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 1241px;
+    position: absolute;
+    left: 100px;
+    top: 27px;
+  }
+
+  .footer-text-say-t-nx-rit-si {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 196px;
+    height: 236px;
+
+    .sayt-n-x-rit-si {
+      color: $white-100;
+      font-family: "SpaceGrotesk-Bold", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      align-self: stretch;
+    }
+
+    .ana-s-hif,
+    .nec-i-l-yir,
+    .biznes-tipl-ri,
+    .qiym-t,
+    .laq {
+      color: $white-100;
+      font-family: "SpaceGrotesk-Light", sans-serif;
+      font-size: 20px;
+      font-weight: 300;
+      align-self: stretch;
+    }
+  }
+
+  .sosial-mediatext {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 169px;
+    height: 116px;
+
+    .sosial-media {
+      color: $white-100;
+      font-family: "SpaceGrotesk-Bold", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      align-self: stretch;
+    }
+
+    .instagram,
+    .facebook {
+      color: $white-100;
+      font-family: "SpaceGrotesk-Light", sans-serif;
+      font-size: 20px;
+      font-weight: 300;
+      align-self: stretch;
+    }
+  }
+
+  .abun-card {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 494px;
+
+    .yenilik-rimizd-n-x-b-rdar-olmaq-n-abun-olun {
+      color: $white-100;
+      font-family: "SpaceGrotesk-Bold", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      align-self: stretch;
+    }
+
+    .button-textonleft {
+      background: $white-100;
+      border-radius: 75px;
+      padding: 13px 34px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      align-self: stretch;
+      flex-shrink: 0;
+      overflow: hidden;
+
+      .buttontext {
+        color: $white-200;
+        font-family: "SpaceGrotesk-Bold", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .abun-ol-button {
+        background: $white-300;
+        border-radius: 75px;
+        padding: 4px 8px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 95px;
+        height: 34px;
+        overflow: hidden;
+
+        .abun-ol {
+          color: $white-100;
+          font-family: "SpaceGrotesk-Bold", sans-serif;
+          font-size: 16px;
+          font-weight: 700;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .frame-46 {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-shrink: 0;
+
+    .frame-44 {
+      border-radius: 2px;
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      aspect-ratio: 1;
+      overflow: visible;
+    }
+  }
+
+  .qaydalar-v-rtl-rl-raz-yam {
+    color: $white-400;
+    font-family: "SpaceGrotesk-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    gap: 10.74px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 145px;
+    height: 124px;
+    overflow: visible;
+  }
+
+  .fish-sound-2025-b-t-n-h-quqlar-qorunur {
+    color: $white-100;
+    font-family: "SpaceGrotesk-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    width: 1241px;
+  }
+}

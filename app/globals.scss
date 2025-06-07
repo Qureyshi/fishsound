@@ -1,0 +1,14 @@
+@use '@/styles/variable.module.scss' as *;
+@use '@/styles/mixin.module.scss' as *;
+
+
+
+$primary-color: #2c83e8;
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--black-100, #000000);
+  color: white;
+  padding: 0 200px;
+}
+

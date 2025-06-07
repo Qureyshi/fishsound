@@ -1,0 +1,101 @@
+@use "@/styles/mixin.module.scss" as *;
+@use "@/styles/variable.module.scss" as *;
+ 
+
+
+.header_container {
+   display: flex;
+   align-items: center;
+   justify-content: center ;
+}
+.home_header{
+   background-color: white;
+   padding: 40px;
+   border-radius: 250px;
+    text-align: left;
+  font-family: "SpaceGrotesk-Bold", sans-serif;
+  font-size: 55px;
+  font-weight: 700;
+  position: relative;
+  width: 80%;
+  text-align: center;
+}
+
+
+.span1 {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.span2 {
+  color: var(--blue-100, #0d9eec);
+}
+
+.playlist_covers_1{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 15px;
+   margin-bottom: 15px;
+ 
+   div{
+      flex-basis: calc((100% - 60px) / 5);
+       
+   }
+}
+
+.playlist_covers_2{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 15px;
+   box-sizing: border-box;
+   div{
+      flex-basis: calc((100% - 60px) / 5);
+      box-sizing: border-box;
+      
+   }
+}
+
+.image{
+   width: 100%;
+   height: 100%;
+ border-radius: 20px;
+}
+
+.wave_image{
+   width: 50%;
+}
+
+
+.flex_center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+
+.category_container{
+   background-color: #0d9eec;
+   border-radius: 250px;
+   display: flex;
+   justify-content: center;
+   padding: 50px 150px;
+}
+
+.category_flexbox{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+ 
+   width: 100%;
+   div{
+       
+   }
+}

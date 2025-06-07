@@ -1,10 +1,10 @@
-import HomeContainer from '@/container/homeContainer'
+import BusinessContainer from '@/container/businessContainer'
 import React from 'react'
 
 export default function page() {
   return (
     <>
-    <HomeContainer/>
+     <BusinessContainer/>
     </>
   )
 }

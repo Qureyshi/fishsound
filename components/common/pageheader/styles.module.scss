@@ -1,0 +1,42 @@
+@use "@/styles/mixin.module.scss" as *;
+@use "@/styles/variable.module.scss" as *;
+
+
+.header-container{
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 80px;
+  border-radius: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.circle{
+  background-color: #0D9EEC;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+ 
+
+.txt {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-family: "SpaceGrotesk-Bold", sans-serif;
+  font-size: 55px;
+  font-weight: 700;
+  position: relative;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

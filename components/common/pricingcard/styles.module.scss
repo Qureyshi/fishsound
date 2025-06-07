@@ -1,0 +1,26 @@
+@use "@/styles/mixin.module.scss" as *;
+@use "@/styles/variable.module.scss" as *;
+
+.card{
+  background-color: white;
+  color: black;
+  display: inline-block;
+  padding: 40px;
+  border-radius: 30px;
+  min-width: 300px;
+   .title{
+    font-size: 30px;
+   }
+   .list_element{
+    font-size: 25px;
+   }
+  .price_btn{
+    background-color: #0d9eec;
+    padding: 15px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+}

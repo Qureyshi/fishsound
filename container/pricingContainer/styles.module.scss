@@ -1,0 +1,33 @@
+@use "@/styles/mixin.module.scss" as *;
+@use "@/styles/variable.module.scss" as *;
+
+ .business_features{
+   display: flex;
+   justify-content: space-between;
+ }
+
+ .feature{
+    div{
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+ }
+
+
+ .pricing_cards{
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+ 
+ gap: 20px;
+ 
+
+  .card{
+    
+
+    display: flex;
+    justify-content: center;
+     flex: 1 1 calc((100% - 20px) / 2);
+  }
+ }
