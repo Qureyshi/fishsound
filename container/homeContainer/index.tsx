@@ -8,17 +8,17 @@ import Image from 'next/image';
 export default function HomeContainer() {
   return (
     <>
-      <Navbar/>
+    <Navbar />
 
   <div className={styles["header_container"]}>
     <div className={styles["home_header"]}>
-        
+        <h2>
           <span className={styles["span1"]}>Biz </span>
           <span className={styles["span2"]}>Fish Sound </span>
           <span className={styles["span1"]}>olaraq sizin müəssisələrinizə </span>
           <span className={styles["span2"]}>fon musiqisi xidməti </span>
           <span className={styles["span1"]}>təklif edirik!</span>
-        
+        </h2>
 
       </div>
     </div>
@@ -178,7 +178,7 @@ export default function HomeContainer() {
         </div>
       </div>
 
-      <Footer />
+       
     </>
   );
 }
