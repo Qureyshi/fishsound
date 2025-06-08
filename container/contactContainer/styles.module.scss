@@ -31,3 +31,150 @@
      flex: 1 1 calc((100% - 20px) / 2);
   }
  }
+
+
+
+
+ .contactCard {
+  background: #ffffff;
+  border-radius: 45px;
+  height: 431px;
+  margin-top: 30px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.contactContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 997px;
+  height: 348px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 41px;
+}
+
+.sectionTitle,
+.applicationTitle {
+  color: #000000;
+  text-align: left;
+  font-family: "SpaceGrotesk-Bold", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  position: relative;
+}
+
+.addressText,
+.contactInfo {
+  color: #000000;
+  text-align: left;
+  font-family: "SpaceGrotesk-Regular", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  position: relative;
+  width: 969px;
+  height: 81px;
+}
+
+
+
+
+
+
+
+
+.contactForm {
+  display: flex;
+  flex-direction: row;
+  gap: 99px;
+  box-sizing: border-box;
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    width: 494px;
+    position: relative;
+  }
+
+  &__field {
+    height: 93px;
+    position: relative;
+
+    &--stacked {
+      height: 189px;
+    }
+  }
+}
+
+.inputContainer {
+  background: #ffffff;
+  border-radius: 75px;
+  padding: 13px 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 494px;
+  height: 60px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 33px;
+  overflow: hidden;
+}
+
+.inputText {
+  color: #b2b2b2;
+  font-family: "SpaceGrotesk-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.inputLabel {
+  color: #ffffff;
+  font-family: "SpaceGrotesk-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.6;
+  position: absolute;
+  left: calc(50% - 235px);
+  top: 0;
+  width: 304px;
+}
+
+.inputIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.submitButton {
+  background: #0d9eec;
+  border-radius: 75px;
+  padding: 0 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 494px;
+  height: 53px;
+  position: absolute;
+  left: 0;
+  top: 110px;
+
+  &__text {
+    color: #ffffff;
+    font-family: "SpaceGrotesk-Medium", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+
+
+
+

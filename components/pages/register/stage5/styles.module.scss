@@ -1,0 +1,94 @@
+@use "@/styles/mixin.module.scss" as *;
+@use "@/styles/variable.module.scss" as *;
+
+.container {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  color: black;
+
+  h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+  }
+
+  p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  border: 2px solid #999;
+  border-radius: 9999px;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.88rem;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: #f7f7f7;
+  }
+}
+
+.selected {
+  background: linear-gradient(to right, #007CF0, #F71735);
+  color: white;
+  border: none;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 1.2rem 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  button {
+    border-radius: 9999px;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+  }
+
+  .generateBtn {
+    background: linear-gradient(to right, #007CF0, #00DFD8, #F71735);
+    color: white;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .detailBtn {
+    background: #eaeaea;
+    color: #777;
+
+    &:hover {
+      background: #dcdcdc;
+    }
+  }
+}

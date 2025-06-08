@@ -1,0 +1,80 @@
+@use "@/styles/mixin.module.scss" as *;
+@use "@/styles/variable.module.scss" as *;
+
+.container {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+
+  h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: black;
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  p {
+    color: #333;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 2px solid #ccc;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .createBtn {
+        background: linear-gradient(
+    90deg,
+    rgba(13, 158, 236, 1) 0%,
+    rgba(255, 1, 1, 1) 100%
+  );
+      
+      color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    .manualBtn {
+      background: #f2f2f2;
+      color: #555;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+
+      &:hover {
+        background: #e0e0e0;
+      }
+    }
+  }
+}

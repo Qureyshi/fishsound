@@ -1,0 +1,67 @@
+@use "@/styles/mixin.module.scss" as *;
+@use "@/styles/variable.module.scss" as *;
+
+.registration {
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  padding: 40px 20px;
+  border-radius: 1.5rem;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #555;
+}
+
+.buttons {
+  margin-bottom: 1rem;
+
+  .button {
+    background-color: black;
+    color: white;
+    
+    border-radius: 999px;
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #222;
+    }
+  }
+}
+
+.loginPrompt {
+  font-size: 0.9rem;
+  color: #555;
+
+  span {
+    cursor: default;
+  }
+
+  .loginQuestion {
+    margin-right: 0.25rem;
+    color: black;
+  }
+
+  .loginLink {
+    color: #3b82f6;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

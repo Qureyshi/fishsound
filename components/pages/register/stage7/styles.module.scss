@@ -1,0 +1,60 @@
+@use "@/styles/mixin.module.scss" as *;
+@use "@/styles/variable.module.scss" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 2px solid #a855f7; // purple border
+  border-radius: 1rem;
+  background: white;
+  max-width: 600px;
+  margin: 2rem auto;
+  position: relative;
+  color: black;
+}
+
+.tag {
+  background-color: #a855f733; // light purple background
+  color: #a855f7;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.highlight {
+  background: linear-gradient(to right, #3b82f6, #ef4444); // blue to red
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.nextBtn {
+  background: linear-gradient(to right, #3b82f6, #ef4444);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
