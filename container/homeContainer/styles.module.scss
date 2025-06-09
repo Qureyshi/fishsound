@@ -1,7 +1,7 @@
 @use "@/styles/mixin.module.scss" as *;
 @use "@/styles/variable.module.scss" as *;
  
-
+ 
 
 .header_container {
    display: flex;
@@ -14,14 +14,15 @@
    border-radius: 250px;
     text-align: left;
   font-family: "SpaceGrotesk-Bold", sans-serif;
-  
+  margin: 80px  0;
   font-weight: 700;
   position: relative;
   width: 80%;
   text-align: center;
 
-    @include tablet {
-      padding: 40px;
+    @include lg_tablet {
+      padding: 30px;
+       margin: 30px  0;
    }
     @include mobile {
       padding: 20px;
@@ -38,7 +39,7 @@
       font-size: 30px;
    }
     @include mobile {
-      font-size: 20px;
+      font-size: 15px;
    }
    }
 
@@ -96,15 +97,18 @@
  border-radius: 20px;
 }
 
-.wave_image{
-   width: 50%;
+.wave_image {
+  width: 100%;
+  max-width: 610px;
+  height: auto;
+  display: block;
 }
-
 
 .flex_center{
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   
 }
 
@@ -117,13 +121,28 @@
    justify-content: center;
    padding: 50px 150px;
    margin-bottom: 30px;
+
+  
+    @include lg_tablet{
+     padding: 20px 50px;
+   }
+    @include mobile{
+     padding: 20px 50px;
+   }
 }
 
 .category_flexbox{
    display: flex;
-   flex-wrap: wrap;
+   
    justify-content: space-between;
- 
+   font-size: 30px;
    width: 100%;
+
+   @include lg_tablet{
+      font-size: 20px;
+   }
     
+   @include mobile{
+      font-size: 10px;
+   }
 }

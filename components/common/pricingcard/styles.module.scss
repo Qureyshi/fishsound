@@ -1,26 +1,48 @@
 @use "@/styles/mixin.module.scss" as *;
 @use "@/styles/variable.module.scss" as *;
 
-.card{
+.card {
   background-color: white;
   color: black;
   display: inline-block;
   padding: 40px;
   border-radius: 30px;
-  min-width: 300px;
-   .title{
+  min-width: 450px;
+  position: relative; // required for absolute children
+
+  .discountBadge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    text-align: center;
+    background: linear-gradient(135deg, white, #791BED); // purple
+    color: white;
+    padding: 8px 12px;
+     
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .title {
     font-size: 30px;
-   }
-   .list_element{
+  }
+
+  .list_element {
     font-size: 25px;
-   }
-  .price_btn{
+    margin-bottom: 25px;
+  }
+
+  .price_btn {
     background-color: #0d9eec;
     padding: 15px;
     border-radius: 20px;
     color: white;
     text-align: center;
     margin-top: 30px;
-  }
 
+    &.purple {
+      background-color: #710DEC;
+    }
+  }
 }

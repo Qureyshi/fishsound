@@ -6,16 +6,36 @@
 $primary-color: #2c83e8;
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "SpaceGrotesk-Regular", sans-serif;
   background: var(--black-100, #000000);
   color: white;
-  padding: 0 150px;
+  
   margin: 0;
-  @include lg_tablet{
-    padding: 0 30px;
+  
+
+
+  
+}
+
+.body_container{
+  padding: 0 100px;
+ @include lg_tablet{
+    padding: 0 20px;
   }
   @include mobile{
     padding: 0 10px;
   }
 }
 
+.m_b{
+  margin-bottom: 73px;
+}
+
+.m_t{
+  margin-top: 85px;
+}
+
+.d_flex{
+  display: flex;
+  align-items: center;
+}

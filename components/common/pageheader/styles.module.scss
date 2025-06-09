@@ -10,10 +10,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 80px 0;
 
-  @include tablet{
-    padding: 40px;
-  }
+  
+    @include lg_tablet {
+      padding: 40px;
+       margin: 30px  0;
+   }
+  
   @include mobile{
     padding: 20px;
   }

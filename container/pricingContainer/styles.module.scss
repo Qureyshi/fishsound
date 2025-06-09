@@ -13,19 +13,55 @@
     }
  }
 
+.monthly {
+  position: relative;
+  display: inline-block;
+  font-size: 42px;
+  padding-left: 20px;
+}
+
+.monthly::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* Yazının altından bir az boşluq */
+  left: 0;
+  width:200%;
+  height: 15px;
+  background-color: #0D9EEC;
+}
+
+.yearly {
+  position: relative;
+  display: inline-block;
+  font-size: 42px;
+  padding-left: 20px;
+}
+
+.yearly::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* Yazının altından bir az boşluq */
+  left: 0;
+   width:200%;
+  height: 15px;
+  background-color: #710DEC;
+}
+
+
+
 
  .pricing_cards{
   margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
  
  gap: 20px;
  
 
   .card{
     
-
+    
     display: flex;
     justify-content: center;
      flex: 1 1 calc((100% - 20px) / 2);

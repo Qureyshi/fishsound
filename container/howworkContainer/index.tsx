@@ -3,23 +3,33 @@ import styles from './styles.module.scss';
 import Footer from '@/components/common/footer';
 import Navbar from '@/components/common/navbar';
 import PageHeader from '@/components/common/pageheader';
+import Image from 'next/image';
 
 
 export default function HowworkContainer() {
   return (
     <>
+    <div className="body_container">
        <Navbar/>
       <PageHeader title="Necə işləyir?" />
-      
+     
+      <div className='d_flex'>
+      <h2 className='m_b'>Sürətli keçid edin</h2>
+      <Image
+          
+         src="/images/arrow.svg"
+         alt="Logo"
+         width={300}
+         height={100}
+       />    
+      </div>
+      <div  className={styles["quick_links"]}> 
+      <div>Necə başlamalı</div>
+      <div>Xüsusiyyətlər</div>
+      <div>FAQ</div>
+      </div>
 
-
-
-
-
-
-
-
-      <h2>Necə başlamalı?</h2>
+      <h2 className='m_b m_t'>Necə başlamalı?</h2>
             <div className={styles["masonry-grid"]}  >
         <div className={styles["item"]}  >
           <h2>
@@ -43,7 +53,7 @@ export default function HowworkContainer() {
 
 
      
-      <h2>Xüsusiyyətlər</h2>
+      <h2 className='m_b m_t'>Xüsusiyyətlər</h2>
       <div className={styles["masonry-grid"]}  >
         <div className={styles["item"]}  >
           <h2>
@@ -129,7 +139,7 @@ export default function HowworkContainer() {
 
      
 
-      <div className={styles["faq"]}  >
+      <div className={`${styles["faq"]} m_t`}>
          <h2>FAQ</h2>
          <div className={styles["faq_row"]}>
           <div>
@@ -238,13 +248,13 @@ export default function HowworkContainer() {
         </div>
  
         <div className={styles["faq_row"]}>
-          <div>
-           <div className={styles["item_button"]}  >
+         
+           <div className={styles["faq_button"]}  >
              <h2>
              Elə indi yoxla!
              </h2>
           </div>
-         </div>
+         
           <div>
             <h2>DJ dəstində və ya digər canlı musiqi performansında Fish Sound istifadə edə bilərəmmi?</h2>
             <p>
@@ -258,6 +268,7 @@ export default function HowworkContainer() {
  
 
 
+      </div>
       </div>
     <Footer/>
        

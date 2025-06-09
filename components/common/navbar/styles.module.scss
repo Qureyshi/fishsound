@@ -1,36 +1,59 @@
 @use "@/styles/mixin.module.scss" as *;
 @use "@/styles/variable.module.scss" as *;
 
-
- .navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
- }
-  
- .nav_links{
+  position: relative;
+  padding: 15px 30px;
+}
+
+.nav_links {
   display: flex;
-     align-items: center;
-     flex-wrap: wrap;
- }
+  align-items: center;
+  flex-wrap: wrap;
 
- .nav_link{
-  padding: 0 15px;
- }
+  @include lg_tablet {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 250px;
+    background-color: #111;
+    padding-top: 80px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+}
 
+.show_menu {
+  right: 0 !important;
+}
 
-.nav_dot{
-  background-color: #0D9EEC;
+.nav_link {
+  padding: 0 18px;
+  @include tablet {
+    padding: 20px 0;
+  }
+}
+
+.nav_dot {
+  background-color: #0d9eec;
   width: 5px;
   height: 5px;
   border-radius: 50px;
- 
+
+  @include lg_tablet {
+    display: none;
+  }
 }
 
-.link{
+.link {
   text-decoration: none;
-  color:  #c9c9c9;
+  color: #c9c9c9;
 }
 
 .login_btn {
@@ -48,17 +71,24 @@
   font-weight: 500;
   position: relative;
 }
-  
-  .logo {
-    display: flex;
-    flex-direction: column;
-    gap: 7.97px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-shrink: 0;
-    width: 107.58px;
-    height: 92px;
-    position: relative;
-    overflow: visible;
+
+.logo {
+  display: flex;
+  width: 107.58px;
+  height: 92px;
+  position: relative;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+
+  @include lg_tablet {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 1100;
+    color: white;
   }
- 
+}

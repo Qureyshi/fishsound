@@ -5,11 +5,12 @@ import Image from 'next/image';
 export default function Footer() {
   return (
     <>
-         <div  className={styles["footer"]}>
- 
- 
+
+         <div  className={styles["footer_container"]}>
+            <div className="body_container">
+            <div  className={styles["footer"]}>
             <div className={styles["footer-text"]}>
-              <div className={styles["section-title"]}>Saytın xəritəsi</div>
+              <h3 className={styles["section-title"]}>Saytın xəritəsi</h3>
               <div className={styles["link"]}>Ana səhifə</div>
               <div className={styles["link"]}>Necə işləyir?</div>
               <div className={styles["link"]}>Biznes tipləri</div>
@@ -18,20 +19,22 @@ export default function Footer() {
             </div>
           
             <div className={styles["sosial-media-block"]}>
-              <div className={styles["section-title"]}>Sosial media</div>
+              <h3 className={styles["section-title"]}>Sosial media</h3>
               <div className={styles["link"]}>Instagram</div>
               <div className={styles["link"]}>Facebook</div>
             </div>
           
             <div className={styles["abun-card"]}>
-              <div className={styles["subscribe-text"]}>
+              <h3 className={styles["subscribe-text"]}>
                 Yeniliklərimizdən xəbərdar olmaq üçün abunə olun
-              </div>
-              <div className={styles["button-wrapper"]}>
-                <div className={styles["input-placeholder"]}>user@example.com</div>
-                <div className={styles["abun-ol-button"]}>
-                  <div className={styles["abun-ol"]}>Abunə ol</div>
-                </div>
+              </h3>
+              <div className={styles["input-button-wrapper"]}>
+                <input
+                  type="email"
+                  placeholder="user@example.com"
+                  className={styles["email-input"]}
+                />
+                <button className={styles["abun-ol-button"]}>Abunə ol</button>
               </div>
               <div className={styles["checkbox-agree"]}>
                 <img className={styles["checkbox-icon"]} src="frame-440.svg" alt="" />
@@ -48,12 +51,17 @@ export default function Footer() {
                   />
           
             
-           
-        </div>
-        <div className={styles["copyright"]}>
+            </div>
+            
+            <div className={styles["copyright"]}>
               Fish Sound 2025. Bütün hüquqlar qorunur.
             </div>
 
+
+            </div>
+           
+        </div>
+        
     </>
   )
 }

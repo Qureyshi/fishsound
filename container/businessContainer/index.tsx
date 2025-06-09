@@ -9,6 +9,7 @@ import Masonry from '@/components/common/masonry';
 export default function BusinessContainer() {
   return (
     <>
+      <div className="body_container">
        <Navbar/>
       <PageHeader title="Biznes tipləri" /> 
       
@@ -54,12 +55,16 @@ export default function BusinessContainer() {
 
 
 
+    <div className={styles["btn"]}  >
+             <h2>
+             Elə indi yoxla!
+             </h2>
+    </div>
 
 
 
 
-
-
+     </div>
     <Footer/> 
 
 

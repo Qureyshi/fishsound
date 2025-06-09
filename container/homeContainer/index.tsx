@@ -8,6 +8,7 @@ import Image from 'next/image';
 export default function HomeContainer() {
   return (
     <>
+    <div className="body_container">
     <Navbar/>
 
   <div className={styles["header_container"]}>
@@ -23,13 +24,13 @@ export default function HomeContainer() {
       </div>
     </div>
 
-    <h2>Hər müəssiyə uyğun</h2>
+    <h2 className='m_b'>Hər müəssiyə uyğun</h2>
 
       <Masonry />
 
 
-    <h2>Playlist seçənəkləri</h2>
-    <div>
+    <h2 className='m_t m_b'>Playlist seçənəkləri</h2>
+    <div className='m_b'>
       1500 dən çox hazır pleylistdən istifadə edin və ya öz pleylistinizi yaradın
       <br />
       <br />
@@ -123,8 +124,8 @@ export default function HomeContainer() {
       </div>
     </div>
 
-      <h2>Xüsusi stansiyalar ilə pleylist qurmağınıza ehtiyyac qalmasın</h2>
-      <p> Xüsusi stansiyalardan istifadə edərək seçdiyiniz janrın kanalına daxil ola və
+      <h2 className='m_t m_b'>Xüsusi stansiyalar ilə pleylist qurmağınıza ehtiyyac qalmasın</h2>
+      <p className='m_b'> Xüsusi stansiyalardan istifadə edərək seçdiyiniz janrın kanalına daxil ola və
   hər gün dəyişən musiqilər dinləyən bilərsiniz</p>
 
 
@@ -138,9 +139,8 @@ export default function HomeContainer() {
           /> 
       </div>
 
-      <h2>Hər musiqi janrını tapa bilərsiniz</h2>
-      <p>FM xüsusiyyətindən istifadə edərək seçdiyiniz janrın kanalına daxil ola və hər
-  gün dəyişən musiqilər dinləyən bilərsiniz</p>
+      <h1 className='m_t m_b'>Hər musiqi janrını tapa bilərsiniz</h1>
+      <p className='m_b'>FM xüsusiyyətindən istifadə edərək seçdiyiniz janrın kanalına daxil ola və hər  gün dəyişən musiqilər dinləyən bilərsiniz</p>
 
 
 
@@ -178,7 +178,10 @@ export default function HomeContainer() {
         </div>
       </div>
 
-       <Footer/>
+       
+    </div>
+    <Footer/>
+
     </>
   );
 }
