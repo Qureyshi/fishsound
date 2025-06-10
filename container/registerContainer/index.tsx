@@ -19,7 +19,7 @@ export default function RegisterContainer() {
   return (
     <>
       <Navbar />
-      {/**
+      
       <div className={styles.container}>
         <h2 className={styles.title}>Fish Sound-a xoş gəlmisiniz</h2>
         <p  className={styles.titletext}>
@@ -141,12 +141,14 @@ export default function RegisterContainer() {
           </button>
         </form>
       </div>
-
+{/**
       <RegistrationPrompt/>
  
      <AiPlaylistForm/>  <WorkplaceSelector/> <OfficeMoodSelector/><GenreSelector/>  <PlaylistNotification/>
-*/}
+
    <SpotifyIntegration/>
+      */}
+
       
       <Footer />
     </>

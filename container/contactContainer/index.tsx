@@ -50,10 +50,7 @@ export default function ContactContainer() {
           <div className={styles.contactForm__column}>
             <div className={styles.contactForm__field}>
               <label className={styles.inputLabel}>Soyad</label>
-              <div className={styles.inputWithIcon}>
-                <input className={styles.input} type="text" placeholder="Ahmadov" />
-                <img src="mdi-eye0.svg" alt="Show" className={styles.inputIcon} />
-              </div>
+              <input className={styles.input} type="text" placeholder="Ahmadov" />
             </div>
 
             <div className={styles.contactForm__field}>
@@ -67,8 +64,9 @@ export default function ContactContainer() {
           </div>
         </form>
 
-        <Footer />
+        
       </div>
+      <Footer />
     </>
   );
 }

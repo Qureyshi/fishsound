@@ -7,9 +7,11 @@
   display: inline-block;
   padding: 40px;
   border-radius: 30px;
-  min-width: 450px;
+  min-width: 400px;
   position: relative; // required for absolute children
-
+  @include tablet{
+    min-width: auto;
+  }
   .discountBadge {
     position: absolute;
     top: 0;
@@ -22,6 +24,9 @@
      
     font-size: 32px;
     font-weight: bold;
+    @include tablet{
+      font-size: 24px;
+    }
   }
 
   .title {
@@ -44,5 +49,11 @@
     &.purple {
       background-color: #710DEC;
     }
+  }
+
+
+
+  .feature-list{
+    font-size: 32px;
   }
 }

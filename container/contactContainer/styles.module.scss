@@ -44,71 +44,85 @@
   font-size: 20px;
   font-family: "SpaceGrotesk-Regular", sans-serif;
 }
-
 .contactForm {
   display: flex;
-  gap: 40px;
-  margin-top: 40px;
-
-  &__column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  &__field {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
+  gap: 40px; /* space between left and right columns */
+  padding: 0 20px; /* space left and right of the whole form */
+  flex-wrap: wrap; /* for responsiveness */
 }
 
-.inputLabel {
-  color: #555;
-  font-size: 16px;
-  font-family: "SpaceGrotesk-Regular", sans-serif;
+.contactForm__column {
+  flex: 1;
+  min-width: 280px; /* minimum width for columns */
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* space between inputs inside column */
+  
 }
 
+/* Inputs with rounded borders */
 .input {
-  padding: 12px 20px;
   border: 1px solid #ccc;
-  border-radius: 12px;
+  border-radius: 2rem;
+  padding: 15px 20px;
   font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* For the input with icon wrapper */
+.inputWithIcon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputWithIcon .input {
+  padding-right: 32px; /* space for the icon */
+}
+
+.inputIcon {
+  position: absolute;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Button styling */
+.submitButton {
+  margin-top: auto; /* pushes button to bottom of right column */
+  border: none;
+   border-radius: 2rem;
+  padding: 15px 20px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
   width: 100%;
 }
 
-.inputWithIcon {
-  position: relative;
-
-  input {
-    width: 100%;
-    padding-right: 40px;
-  }
-
-  .inputIcon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 24px;
-    height: 24px;
-  }
+.inputLabel{
+  color:  #6e6e6e ;
+font-family: "Space Grotesk";
+font-size: 18.057px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }
 
-.submitButton {
-  margin-top: 10px;
-  padding: 14px 20px;
-  background-color: #0d9eec;
-  color: white;
-  font-size: 18px;
-  font-family: "SpaceGrotesk-Medium", sans-serif;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+/* Responsive: stack inputs vertically on small screens */
+@media (max-width: 768px) {
+  .contactForm {
+    flex-direction: column;
+    padding: 0 10px;
+  }
 
-  &:hover {
-    background-color: #0a7ec4;
+  .contactForm__column {
+    min-width: 100%;
+  }
+
+  .submitButton {
+    margin-top: 20px;
   }
 }

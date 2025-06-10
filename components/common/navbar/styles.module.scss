@@ -7,7 +7,8 @@
   align-items: center;
   flex-wrap: wrap;
   position: relative;
-  padding: 15px 30px;
+  padding: 15px 2px;
+   
 }
 
 .nav_links {
@@ -74,9 +75,13 @@
 
 .logo {
   display: flex;
-  width: 107.58px;
-  height: 92px;
+  height: 90px;
   position: relative;
+
+  @include tablet{
+    height: 50px;
+  
+  }
 }
 
 .hamburger {
@@ -85,9 +90,7 @@
 
   @include lg_tablet {
     display: block;
-    position: absolute;
-    top: 30px;
-    right: 30px;
+    padding: 0 20px;
     z-index: 1100;
     color: white;
   }

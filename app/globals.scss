@@ -6,19 +6,20 @@
 $primary-color: #2c83e8;
 
 body {
-  font-family: "SpaceGrotesk-Regular", sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-weight: 700; 
   background: var(--black-100, #000000);
   color: white;
   
   margin: 0;
-  
-
+ 
 
   
 }
 
 .body_container{
   padding: 0 100px;
+  overflow: hidden;
  @include lg_tablet{
     padding: 0 20px;
   }
@@ -39,3 +40,13 @@ body {
   display: flex;
   align-items: center;
 }
+
+.fs_42{
+  font-size: 42px;
+}
+
+.fs_32{
+  font-size: 32px;
+  font-weight: 200;
+}
+

@@ -1,7 +1,9 @@
+import Navbar from "@/components/common/navbar";
+import Sidebar from "@/components/common/sidebar";
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
-import "./globals.scss";
-
+import "../../../globals.scss";
+import './layout.module.scss'
 // Space Grotesk fontunu variable olaraq təyin edirik
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -21,7 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={spaceGrotesk.variable}>
-      <body>{children}</body>
+       
+      <body>
+        <div className="layout-container">
+          <Sidebar />
+          <main className="main-content">{children}</main>
+        </div>
+      </body>
     </html>
   );
 }

@@ -15,13 +15,14 @@ export default function HowworkContainer() {
      
       <div className='d_flex'>
       <h2 className='m_b'>Sürətli keçid edin</h2>
+     {/** 
       <Image
           
          src="/images/arrow.svg"
          alt="Logo"
          width={300}
          height={100}
-       />    
+       />  */}  
       </div>
       <div  className={styles["quick_links"]}> 
       <div>Necə başlamalı</div>
