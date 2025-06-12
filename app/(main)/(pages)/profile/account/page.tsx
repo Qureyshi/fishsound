@@ -1,8 +1,9 @@
-import PricingContainer from '@/container/pricingContainer'
+
+import ProfilAccountContainer from '@/container/profileAccountContainer copy'
 import React from 'react'
 
 export default function Account() {
   return (
-    <div>acount</div>
+    <ProfilAccountContainer/>
   )
 }

@@ -1,54 +1,74 @@
 @use "@/styles/mixin.module.scss" as *;
 @use "@/styles/variable.module.scss" as *;
+ 
+ 
 
+/* Sidebar ümumi görünüş */
 .sidebar {
-  width: 10%;
-  background-color: #2c3e50;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 100vh;
+  background-color: #D3D3D3;
   color: white;
-  padding: 1rem;
-  min-width: 80px;
-}
+  padding: 20px;
+  
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  @include mobile {
+    transform: translateX(-100%); 
+  }
+  ul {
+    list-style: none;
+    padding: 0;
 
-.nav {
-  display: none;
-  flex-direction: column;
-  gap: 1rem;
+    li {
+      margin-bottom: 20px;
 
-  a {
-    color: white;
-    text-decoration: none;
+      a {
+        color: white;
+        text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
 
-.mobileHeader {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
-
-  .toggleBtn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-}
-
-/* Show nav by default on desktop */
-@media (min-width: 768px) {
-  .nav {
-    display: flex !important;
-  }
-
-  .mobileHeader {
-    display: none;
-  }
-}
-
+/* Açıldıqda görünür */
 .open {
-  display: flex !important;
+  transform: translateX(0);
+}
+
+/* Hamburger düyməsi */
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #fff;
+  color: #000;
+  font-size: 18px;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+
+  @include mobile {
+    display: block;
+  }
+}
+
+/* Overlay (qara fon) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }

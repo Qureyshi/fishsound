@@ -37,8 +37,7 @@ export default function Footer() {
                 <button className={styles["abun-ol-button"]}>Abunə ol</button>
               </div>
               <div className={styles["checkbox-agree"]}>
-                <img className={styles["checkbox-icon"]} src="frame-440.svg" alt="" />
-                <div className={styles["checkbox-label"]}>Qaydalar və şərtlərlə razıyam</div>
+                  <div className={styles["checkbox-label"]}>Qaydalar və şərtlərlə razıyam</div>
               </div>
             </div>
 

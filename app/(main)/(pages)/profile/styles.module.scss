@@ -1,0 +1,23 @@
+@use "@/styles/mixin.module.scss" as *;
+@use "@/styles/variable.module.scss" as *;
+ 
+ 
+
+
+.layout-container{
+  position: relative;
+  background-color: #E9E9E9;
+  min-height: 100vh;
+  color: black;
+  
+
+  
+ }
+
+ .main{
+  padding: 20px 150px;
+  margin-left:  200px;
+  @include mobile {
+    margin-left:  0;
+  }
+ }
