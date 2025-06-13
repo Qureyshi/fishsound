@@ -14,9 +14,10 @@ export default function HomeContainer() {
   <div className={styles["header_container"]}>
     <div className={styles["home_header"]}>
         <h2>
-          <span className={styles["span1"]}>Biz </span>
+          <span className={styles["span"]}>Biz </span>
           <span className={styles["span2"]}>Fish Sound </span>
-          <span className={styles["span1"]}>olaraq sizin müəssisələrinizə </span>
+          <span className={styles["span1"]}>olaraq sizin </span>
+          <span className={styles["span1"]}>müəssisələrinizə </span>
           <span className={styles["span2"]}>fon musiqisi xidməti </span>
           <span className={styles["span1"]}>təklif edirik!</span>
         </h2>
