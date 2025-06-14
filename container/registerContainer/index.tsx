@@ -141,13 +141,13 @@ export default function RegisterContainer() {
           </button>
         </form>
       </div>
-{/**
+
       <RegistrationPrompt/>
  
      <AiPlaylistForm/>  <WorkplaceSelector/> <OfficeMoodSelector/><GenreSelector/>  <PlaylistNotification/>
 
    <SpotifyIntegration/>
-      */}
+ {/**     */}
 
       
       <Footer />

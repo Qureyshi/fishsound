@@ -1,0 +1,39 @@
+@use "@/styles/mixin.module.scss" as *;
+@use "@/styles/variable.module.scss" as *;
+
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 40px;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+.logo {
+  display: flex;
+  height: 90px;
+  position: relative;
+
+  @include tablet{
+    height: 50px;
+  
+  }
+}
+
+  .profile {
+    color: #000;
+    font-size: 16px;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &:hover {
+      color: #555;
+    }
+  }
+}

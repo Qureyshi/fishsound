@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "../../../globals.scss";
 import styles from './styles.module.scss'
+import ProfileHeader from "@/components/common/profileheader";
 // Space Grotesk fontunu variable olaraq təyin edirik
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -24,8 +25,8 @@ export default function ProfileLayout({
     <html lang="en" className={spaceGrotesk.variable}>
        
       <body>
-      
-        <div>SINAQ MÜDDƏTİNİN BİTMƏSİNƏ 5 GÜN QALIB</div>
+        <ProfileHeader/>
+        <div  className={styles["announcement"]}>SINAQ MÜDDƏTİNİN BİTMƏSİNƏ 5 GÜN QALIB</div>
         <div className={styles["layout-container"]}>
           <Sidebar />
           <main className={styles["main"]}>{children}</main>

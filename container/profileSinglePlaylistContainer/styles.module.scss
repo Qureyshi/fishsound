@@ -1,0 +1,86 @@
+@use "@/styles/mixin.module.scss" as *;
+@use "@/styles/variable.module.scss" as *;
+
+.container {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 12px;
+  font-family: 'Arial', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  color: #8e8e8e;
+  font-size: 14px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+
+  button {
+    padding: 10px 15px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .play {
+    background-color: #0099ff;
+    color: white;
+  }
+
+  .location, .add, .edit {
+    background-color: black;
+    color: white;
+  }
+}
+
+.playlistImage {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.songList {
+  margin-top: 30px;
+}
+
+.songHeader {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  font-weight: bold;
+  color: #8e8e8e;
+  padding: 10px 0;
+}
+
+.songRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 10px 0;
+  background: #fff;
+  margin-bottom: 10px;
+  border-radius: 8px;
+
+  &.active {
+    background: #dcdcdc;
+  }
+
+  .cover {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}

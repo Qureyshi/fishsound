@@ -1,24 +1,25 @@
 @use "@/styles/mixin.module.scss" as *;
 @use "@/styles/variable.module.scss" as *;
- 
- 
 
-/* Sidebar ümumi görünüş */
 .sidebar {
   position: absolute;
   top: 0;
   left: 0;
   width: 150px;
   height: 100vh;
-  background-color: #D3D3D3;
-  color: white;
-  padding: 20px;
-  
-  transition: transform 0.3s ease;
-  z-index: 1000;
-  @include mobile {
-    transform: translateX(-100%); 
+  background-color: #d3d3d3;
+  color: #fff;
+  text-align: center;
+   @include mobile {
+    transform: translateX(-100%);
   }
+   
+
+ 
+  transition: transform 0.3s ease;
+
+  z-index: 1000;
+
   ul {
     list-style: none;
     padding: 0;
@@ -27,7 +28,7 @@
       margin-bottom: 20px;
 
       a {
-        color: white;
+        color: #fff;
         text-decoration: none;
 
         &:hover {
@@ -36,14 +37,17 @@
       }
     }
   }
+
+  h3 {
+    margin-bottom: 20px;
+    color: #fff;
+  }
 }
 
-/* Açıldıqda görünür */
 .open {
   transform: translateX(0);
 }
 
-/* Hamburger düyməsi */
 .hamburger {
   display: none;
   position: absolute;
@@ -62,13 +66,12 @@
   }
 }
 
-/* Overlay (qara fon) */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(0 0 0 / 0.5);
   z-index: 999;
 }

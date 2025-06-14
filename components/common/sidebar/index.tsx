@@ -1,7 +1,8 @@
 'use client'
+
 import { useState } from 'react'
-import styles from './styles.module.scss'
 import Link from 'next/link'
+import styles from './styles.module.scss'
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false)
@@ -9,7 +10,11 @@ export default function Sidebar() {
   return (
     <>
       {/* Hamburger button - mobile */}
-      <button className={styles.hamburger} onClick={() => setOpen(!open)}>
+      <button
+        aria-label='Open Sidebar'
+        className={styles.hamburger}
+        onClick={() => setOpen(!open)}
+      >
         ☰
       </button>
 
@@ -20,11 +25,32 @@ export default function Sidebar() {
       <aside className={`${styles.sidebar} ${open ? styles.open : ''}`}>
         <nav>
           <ul>
-            <li><Link href="/profile">Profil</Link></li>
-            <li><Link href="/settings">Tənzimləmələr</Link></li>
-            <li><Link href="/logout">Çıxış</Link></li>
+            <li>
+              <Link href="/profile">Ana Səhifə</Link>
+            </li>
+            <li>
+              <Link href="/profile/search">Axtar</Link>
+            </li>
+            <li>
+              <Link href="/profile/location">Məkanlar</Link>
+            </li>
+            <li>
+              <Link href="/profile/announce">Anonslar</Link>
+            </li>
+            <li>
+              <Link href="/profile">Pleylistlərim</Link>
+            </li>
           </ul>
         </nav>
+        <hr />
+        {/* Seçilmişlər */}
+        <h3>Seçilmişlər</h3>
+        <ul>
+          <li>Playlistin Adı</li>
+          <li>Playlistin Adı</li>
+          <li>Playlistin Adı</li>
+          <li>Playlistin Adı</li>
+        </ul>
       </aside>
     </>
   )
