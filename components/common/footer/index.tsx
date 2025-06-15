@@ -37,7 +37,12 @@ export default function Footer() {
                 <button className={styles["abun-ol-button"]}>Abunə ol</button>
               </div>
               <div className={styles["checkbox-agree"]}>
-                  <div className={styles["checkbox-label"]}>Qaydalar və şərtlərlə razıyam</div>
+                  <label className={styles.accept}
+                    
+                  >
+                    <input  type="checkbox" className={styles.checkbox} required />
+                    Qaydalar və şərtlərlə razıyam
+                  </label>
               </div>
             </div>
 

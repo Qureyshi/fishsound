@@ -32,8 +32,17 @@
   width: 100%;
   flex-wrap: wrap;
   gap: 1rem;
+  p{
+    font-size: 1.2rem;
+  }
+  
 }
-
+.Btn{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+ 
+  }
 .highlight {
   background: linear-gradient(to right, #3b82f6, #ef4444); // blue to red
   -webkit-background-clip: text;

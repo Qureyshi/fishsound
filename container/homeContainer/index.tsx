@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import Footer from '@/components/common/footer';
-import Navbar from '@/components/common/navbar';
 import Masonry from '@/components/common/masonry';
 import Image from 'next/image';
 
@@ -9,7 +8,7 @@ export default function HomeContainer() {
   return (
     <>
     <div className="body_container">
-    <Navbar/>
+     
 
   <div className={styles["header_container"]}>
     <div className={styles["home_header"]}>
@@ -145,40 +144,20 @@ export default function HomeContainer() {
 
 
 
-      <div className={styles["category_container"]}>
-        <div className={styles["category_flexbox"]}>
-           <div>
-              <div>🎸 Rock</div>
-              <div>🎤 Pop</div>
-              <div>🎧 Electronic</div>
-              <div>🎷 Jazz</div>
-              <div>🎼 Classical</div>
-            </div>
-            <div>
-              <div>🎹 Blues</div>
-              <div>🎺 Funk</div>
-              <div>🎶 Soul</div>
-              <div>🎚️ Hip-Hop</div>
-              <div>🔊 Reggae</div>
-            </div>
-            <div>
-              <div>🎻 Folk</div>
-              <div>🌌 Ambient</div>
-              <div>🕺 Disco</div>
-              <div>🎮 Chiptune</div>
-              <div>🔥 Metal</div>
-            </div>
-            <div>
-              <div>💿 Techno</div>
-              <div>☁️ Lo-fi</div>
-              <div>💀 Gothic</div>
-              <div>🚗 Trap</div>
-              <div>🔉 House</div>
-            </div>
-
-        </div>
+ 
+      <div>
+        <Image
+          className={styles["wave_image"]} 
+          src="/images/logo/tags.png"
+          alt="Logo"
+          width={1240}
+          height={328}
+          style=  {{
+          maxWidth: '100%',
+            height: 'auto',
+          }}
+          /> 
       </div>
-
        
     </div>
     <Footer/>

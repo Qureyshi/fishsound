@@ -1,16 +1,15 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import Footer from '@/components/common/footer';
-import Navbar from '@/components/common/navbar';
 import PageHeader from '@/components/common/pageheader';
-import Image from 'next/image';
+
 
 
 export default function HowworkContainer() {
   return (
     <>
     <div className="body_container">
-       <Navbar/>
+        
       <PageHeader title="Necə işləyir?" />
      
       <div className='d_flex'>

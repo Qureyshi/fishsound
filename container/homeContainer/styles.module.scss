@@ -127,38 +127,4 @@ h2 {
   overflow: hidden;
   
 }
-
-
-
-.category_container{
-   background-color: #0d9eec;
-   border-radius: 250px;
-   display: flex;
-   justify-content: center;
-   padding: 50px 150px;
-   margin-bottom: 30px;
-
-  
-    @include lg_tablet{
-     padding: 20px 50px;
-   }
-    @include mobile{
-     padding: 20px 50px;
-   }
-}
-
-.category_flexbox{
-   display: flex;
-   
-   justify-content: space-between;
-   font-size: 30px;
-   width: 100%;
-
-   @include lg_tablet{
-      font-size: 20px;
-   }
-    
-   @include mobile{
-      font-size: 10px;
-   }
-}
+ 

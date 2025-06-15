@@ -1,26 +1,34 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./styles.module.scss";
-import Navbar from "@/components/common/navbar";
-import Footer from "@/components/common/footer";
-import RegistrationPrompt from "@/components/pages/register/registerprompt";
-import Stage3 from "@/components/pages/register/stage3";
 import AiPlaylistForm from "@/components/pages/register/stage3";
 import WorkplaceSelector from "@/components/pages/register/stage4";
 import OfficeMoodSelector from "@/components/pages/register/stage5";
 import GenreSelector from "@/components/pages/register/stage6";
 import PlaylistNotification from "@/components/pages/register/stage7";
 import SpotifyIntegration from "@/components/pages/register/stage8";
+import BusinessInfoForm from "@/components/pages/register/stage1";
+import WelcomeStep from "@/components/pages/register/stage2";
+import EyeClose from "@/components/icons/EyeClose";
+import Eye from "@/components/icons/Eye";
 
 export default function RegisterContainer() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
+
+  
+  // ilərilətmək
+  const handleNext = () => setCurrentStep((prev) => prev + 1);
+  
+  // geriyə
+  const handleBack = () => setCurrentStep((prev) => prev - 1);
 
   return (
-    <>
-      <Navbar />
-      
-      <div className={styles.container}>
+    <div className={styles.register}>
+  
+
+      { currentStep === 1 && ( <div className={styles.container}>
         <h2 className={styles.title}>Fish Sound-a xoş gəlmisiniz</h2>
         <p  className={styles.titletext}>
           Profilinizi tamamlayaraq xidmətinizi qurun
@@ -64,7 +72,7 @@ export default function RegisterContainer() {
               }}
               aria-label={showPassword ? "Şifrəni gizlət" : "Şifrəni göstər"}
             >
-              {showPassword ? "🙈" : "👁️"}
+              {showPassword ?  <Eye color="white"/> : <EyeClose color="white"/>}
             </span>
           </div>
 
@@ -85,7 +93,7 @@ export default function RegisterContainer() {
               }}
               aria-label={showConfirmPassword ? "Şifrəni gizlət" : "Şifrəni göstər"}
             >
-              {showConfirmPassword ? "🙈" : "👁️"}
+              {showConfirmPassword ? <Eye color="white"/> : <EyeClose color="white"/>}
             </span>
           </div>
 
@@ -95,29 +103,23 @@ export default function RegisterContainer() {
             className={styles.input}
             name="companyName"
           />
-
-          <select className={styles.input} name="businessType" defaultValue="">
-            <option value="" disabled>
-              Biznes tipi
-            </option>
+          <label htmlFor="businessType" className={styles.label}>Biznes tipi</label>
+          <select id="businessType" className={styles.input} name="businessType" defaultValue="">
+           
             <option value="other">Digər</option>
             <option value="retail">Pərakəndə satış</option>
             <option value="service">Xidmətlər</option>
           </select>
 
+          <label htmlFor="aboutBusiness" className={styles.label}>Biznesiniz haqqında</label>
           <select className={styles.input} name="aboutBusiness" defaultValue="">
-            <option value="" disabled>
-              Biznesiniz haqqında
-            </option>
             <option value="clothing">Geyim mağazası</option>
             <option value="food">Restoran</option>
             <option value="tech">Texnologiya</option>
           </select>
-
+            
+           <label htmlFor="location" className={styles.label}>Ölkə/Şəhər/Rayon</label>
           <select className={styles.input} name="location" defaultValue="">
-            <option value="" disabled>
-              Ölkə/Şəhər/Rayon
-            </option>
             <option value="azerbaijan_baku_khetai">Azərbaycan, Bakı şəhəri, Xətai rayonu</option>
             <option value="azerbaijan_ganja">Azərbaycan, Gəncə</option>
           </select>
@@ -136,21 +138,25 @@ export default function RegisterContainer() {
             Qaydalar və şərtlərlə razıyam
           </label>
 
-          <button type="submit" className={styles.loginButton} style={{ marginTop: "1rem" }}>
+          <button type="submit" onClick={handleNext} className={styles.loginButton} style={{ marginTop: "1rem" }}>
             Pulsuz abunəliyi başlat!
           </button>
         </form>
-      </div>
-
-      <RegistrationPrompt/>
- 
-     <AiPlaylistForm/>  <WorkplaceSelector/> <OfficeMoodSelector/><GenreSelector/>  <PlaylistNotification/>
-
-   <SpotifyIntegration/>
- {/**     */}
-
+      </div>)}
       
-      <Footer />
-    </>
+
+       {currentStep === 3 &&   <WelcomeStep onNext={handleNext} /> }
+       {currentStep === 2 &&   <BusinessInfoForm onNext={handleNext} /> }
+       {currentStep === 4 &&   <AiPlaylistForm onNext={handleNext} /> }
+       {currentStep === 5 &&   <WorkplaceSelector onNext={handleNext} /> }
+       {currentStep === 6 &&   <OfficeMoodSelector onNext={handleNext} /> }
+       {currentStep === 7 &&   <GenreSelector onNext={handleNext} /> }
+       {currentStep === 8 &&   <PlaylistNotification onNext={handleNext} /> }
+       {currentStep === 9 &&   <SpotifyIntegration /> }
+      
+ 
+
+     
+    </div>
   );
 }

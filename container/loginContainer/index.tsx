@@ -1,8 +1,6 @@
 "use client"
 import React, { useState } from 'react';
 import styles from './styles.module.scss';
-import Navbar from '@/components/common/navbar';
-import Footer from '@/components/common/footer';
 import Google from '@/components/icons/Google';
 import Eye from '@/components/icons/Eye';
 import EyeClose from '@/components/icons/EyeClose';
@@ -14,7 +12,7 @@ export default function LoginContainer() {
     <>
       <div className="body_container">
 
-      <Navbar />
+    
       <div className={styles.container}>
         <h2 className={styles.title}>Fish Sound hesabına daxil ol</h2>
         <form className={styles.form}>
@@ -35,7 +33,7 @@ export default function LoginContainer() {
               }}
               aria-label={showPassword ? 'Şifrəni gizlət' : 'Şifrəni göstər'}
             >
-              {showPassword ?  <Eye/> : <EyeClose/>}
+              {showPassword ?  <Eye color="white"/> : <EyeClose color="white"/>}
             </span>
           </div>
           <a href="#" className={styles.forgot}>Şifrəni unutmuşan?</a>
@@ -48,7 +46,7 @@ export default function LoginContainer() {
       </div>
       
       </div>
-      <Footer />
+   
     </>
   );
 }

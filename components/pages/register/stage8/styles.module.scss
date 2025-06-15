@@ -2,13 +2,18 @@
 @use "@/styles/variable.module.scss" as *;
 .container {
   background: white;
-  padding: 2rem;
+  box-sizing: content-box;
+  padding: 1rem 2rem;
   border-radius: 1.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   max-width: 640px;
   margin: 2rem auto;
   text-align: left;
   color: black;
+
+  h2{
+    margin: 0;
+  }
 }
 
 .spotify {
@@ -27,6 +32,7 @@
 .buttons {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 1rem;
 }
 
@@ -48,11 +54,10 @@
 .skip {
   background: transparent;
   border: none;
+  text-decoration: none;
   font-weight: 600;
   cursor: pointer;
   color: black;
 
-  &:hover {
-    text-decoration: underline;
-  }
+   
 }

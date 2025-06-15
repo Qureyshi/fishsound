@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import Navbar from '@/components/common/navbar';
 import PageHeader from '@/components/common/pageheader';
 import PricingCard from '@/components/common/pricingcard';
 import Footer from '@/components/common/footer';
@@ -10,7 +9,7 @@ export default function PricingContainer() {
   return (
     <>
       <div className="body_container">
-      <Navbar/>
+       
       <PageHeader title="Qiymət" /> 
 
 

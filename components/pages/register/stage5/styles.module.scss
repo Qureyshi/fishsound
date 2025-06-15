@@ -4,23 +4,23 @@
 .container {
   background: white;
   border-radius: 20px;
-  padding: 2rem;
+  box-sizing: content-box;
+  padding: 1rem 2rem;
   max-width: 500px;
   margin: auto;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  font-family: 'Arial', sans-serif;
-  text-align: center;
+ 
+ 
   color: black;
 
   h1 {
-    font-size: 1.1rem;
-    font-weight: 600;
+    margin: 0;
     margin-bottom: 0.8rem;
-    line-height: 1.5;
+    line-height: 1;
   }
 
   p {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 1.2rem;
   }
@@ -35,9 +35,9 @@
 }
 
 .tag {
-  border: 2px solid #999;
+  border: 2px solid black;
   border-radius: 9999px;
-  padding: 0.5rem 1.2rem;
+  padding: 0.8rem 1.2rem;
   font-size: 0.88rem;
   background: white;
   color: #333;
@@ -50,20 +50,28 @@
 }
 
 .selected {
-  background: linear-gradient(to right, #007CF0, #F71735);
+  background: linear-gradient(
+    90deg,
+    rgba(13, 158, 236, 1) 0%,
+    rgba(255, 1, 1, 1) 100%
+  );
   color: white;
   border: none;
 }
 
+ 
+
 .divider {
   border: none;
-  border-top: 1px solid #ccc;
-  margin: 1.2rem 0;
+  border-top: 3px solid #707070;
+  margin: 1rem 0;
 }
+
 
 .actions {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
 
   button {
@@ -75,7 +83,11 @@
   }
 
   .generateBtn {
-    background: linear-gradient(to right, #007CF0, #00DFD8, #F71735);
+    background: linear-gradient(
+    90deg,
+    rgba(13, 158, 236, 1) 0%,
+    rgba(255, 1, 1, 1) 100%
+  );
     color: white;
 
     &:hover {
@@ -84,8 +96,8 @@
   }
 
   .detailBtn {
-    background: #eaeaea;
-    color: #777;
+    background: #C9C9C9;
+    color: #ffffff;
 
     &:hover {
       background: #dcdcdc;

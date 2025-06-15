@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import Footer from '@/components/common/footer';
-import Navbar from '@/components/common/navbar';
 import PageHeader from '@/components/common/pageheader';
 import Masonry from '@/components/common/masonry';
 
@@ -10,7 +9,7 @@ export default function BusinessContainer() {
   return (
     <>
       <div className="body_container">
-       <Navbar/>
+      
       <PageHeader title="Biznes tipləri" /> 
       
 

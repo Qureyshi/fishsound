@@ -1,0 +1,67 @@
+@use "@/styles/mixin.module.scss" as *;
+@use "@/styles/variable.module.scss" as *;
+
+.card {
+  background: white;
+  color: black;
+  border-radius: 24px;
+  padding: 10px 20px;
+  max-width: 500px;
+  margin: auto;
+ 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+
+  h1{
+    text-align: left;
+    font-size: 32px;
+  }
+  P{
+    font-weight: 300;
+    font-size: 25px;
+  }
+}
+
+.highlight {
+  background: linear-gradient(
+    89.25deg,
+    rgba(13, 158, 236, 1) 0%,
+    rgba(255, 0, 0, 1) 100%
+  ); 
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  margin-top: 24px;
+ 
+}
+
+.skipBtn {
+  border: 1px solid #000000;
+  border-radius: 30px;
+  padding: 20px 70px;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+ 
+}
+
+.startBtn {
+  border: none;
+  border-radius: 30px;
+  padding: 20px 70px;
+  background: #1da1f2;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+ 
+}

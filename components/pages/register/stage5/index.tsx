@@ -10,7 +10,13 @@ const tags = [
   "Orijinal", "Kəşf etməli", "Eksantrik", "Yüksək səsli", "Enerjili"
 ];
 
-export default function OfficeMoodSelector() {
+type Props = {
+  onNext: () => void;
+}
+
+ 
+
+export default function OfficeMoodSelector({ onNext }: Props) {
   const [selected, setSelected] = useState<string[]>([]);
 
   const toggleTag = (tag: string) => {
@@ -41,7 +47,7 @@ export default function OfficeMoodSelector() {
 
       <div className={styles.actions}>
         <button className={styles.generateBtn}>Digər seçimləri Fish Sound etsin!</button>
-        <button className={styles.detailBtn}>Daha detallı seçim etmək istəyirəm!</button>
+        <button className={styles.detailBtn} onClick={onNext}>Daha detallı seçim etmək istəyirəm!</button>
       </div>
     </div>
   );

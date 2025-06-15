@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import Navbar from '@/components/common/navbar';
 import PageHeader from '@/components/common/pageheader';
 import Footer from '@/components/common/footer';
 
@@ -8,7 +7,7 @@ export default function ContactContainer() {
   return (
     <>
       <div className="body_container">
-        <Navbar />
+        
         <PageHeader title="Əlaqə" />
 
         <div className={`${styles.header} m_b m_t`}>Bizimlə əlaqə saxlamağınız üçün</div>

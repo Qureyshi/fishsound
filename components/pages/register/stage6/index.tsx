@@ -14,7 +14,14 @@ const genres = [
   'Rock', 'Soul'
 ];
 
-export default function GenreSelector() {
+type Props = {
+  onNext: () => void;
+}
+
+ 
+
+
+export default function GenreSelector({ onNext }: Props) {
   const [selected, setSelected] = useState<string[]>([]);
 
   const toggleGenre = (genre: string) => {
@@ -30,9 +37,12 @@ export default function GenreSelector() {
         type="text"
         placeholder="Daha detallı seçim etmək istəyirəm!"
         className={styles.input}
-        disabled
+         
       />
       <p>Birini və ya bir neçəsini seçin</p>
+      <div className={styles.separator}>
+        <span>Və ya</span>
+      </div>
       <div className={styles.grid}>
         {genres.map((genre) => (
           <button
@@ -44,7 +54,7 @@ export default function GenreSelector() {
           </button>
         ))}
       </div>
-      <button className={styles.submit}>Digər seçimləri Fish Sound etsin!</button>
+      <button className={styles.submit}  onClick={onNext}>Digər seçimləri Fish Sound etsin!</button>
     </div>
   );
 }

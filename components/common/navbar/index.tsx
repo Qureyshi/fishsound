@@ -12,6 +12,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
+     <div className="body_container">
     <div className={styles.navbar}>
       <Image
         className={styles.logo}
@@ -51,9 +52,10 @@ export default function Navbar() {
         </div>
         <div className={styles.nav_dot}></div>
         <div className={styles.nav_link}>
-          <Link className={`${styles.link} ${styles.login_btn}`} href="/login">Daxil ol</Link>
+          <Link className={`${styles.link} ${styles.login_btn}`} href="/auth">Daxil ol</Link>
         </div>
       </div>
+    </div>
     </div>
   );
 }

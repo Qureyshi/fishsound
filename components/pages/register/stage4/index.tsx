@@ -13,7 +13,13 @@ const workplaceOptions = [
   'Şəxsi gigiyena və sosial xidmətlərinti',
 ];
 
-const WorkplaceSelector = () => {
+
+type Props = {
+  onNext: () => void;
+}
+ 
+
+const WorkplaceSelector = ({ onNext }: Props) => {
   const [selected, setSelected] = useState<string | null>('Ofis');
 
   return (
@@ -42,7 +48,7 @@ const WorkplaceSelector = () => {
 
       <div className={styles.actions}>
         <button className={styles.generateBtn}>Digər seçimləri Fish Sound etsin!</button>
-        <button className={styles.detailBtn}>Daha detallı seçim etmək istəyirəm!</button>
+        <button className={styles.detailBtn} onClick={onNext}>Daha detallı seçim etmək istəyirəm!</button>
       </div>
     </div>
   );

@@ -4,22 +4,19 @@
 .container {
   background: white;
   border-radius: 20px;
-  padding: 2rem;
+  box-sizing: content-box;
+  padding: 0.5rem 2rem;
   max-width: 520px;
   margin: auto;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  font-family: 'Arial', sans-serif;
-  text-align: center;
   color: black;
   h1 {
-    font-size: 1.1rem;
-    font-weight: 600;
     margin-bottom: 1rem;
-    line-height: 1.5;
+    line-height: 1;
   }
 
   p {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 1rem;
   }
@@ -34,9 +31,9 @@
 }
 
 .option {
-  border: 2px solid #999;
+  border: 2px solid black;
   border-radius: 9999px;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1.5rem;
   font-size: 0.9rem;
   background: white;
   color: #333;
@@ -60,21 +57,26 @@
 
 .divider {
   border: none;
-  border-top: 1px solid #ccc;
+  border-top: 3px solid #707070;
   margin: 1rem 0;
 }
 
 .actions {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  
+   
   gap: 1rem;
 
   button {
+    width: auto;
     border-radius: 9999px;
     padding: 0.8rem 1.2rem;
     font-size: 0.9rem;
     cursor: pointer;
     border: none;
+    white-space: nowrap;
   }
 
   .generateBtn {
@@ -91,8 +93,8 @@
   }
 
   .detailBtn {
-    background: #eaeaea;
-    color: #777;
+    background: #C9C9C9;
+    color: #ffffff;
 
     &:hover {
       background: #dcdcdc;
