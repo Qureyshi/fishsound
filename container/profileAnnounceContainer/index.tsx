@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from "./styles.module.scss";
+import Create from '@/components/icons/Create';
+import Search from '@/components/icons/Search';
 //import { FiSearch, FiPlus, FiMoreHorizontal } from 'react-icons/fi';
 
 export default function ProfilAnnounceContainer() {
@@ -11,18 +13,22 @@ export default function ProfilAnnounceContainer() {
       </p>
 
       <div className={styles.controls}>
-        <div className={styles.search}>
-          {/**<FiSearch /> */}
-          <input type="text" placeholder="Məkan axtar" />
+        <div className={styles.searchBox}>
+          <div className={styles.icon}>
+          <Search/>
+          </div>
+          <input
+            type="text"
+            placeholder="Məkan axtar"
+            className={styles.input}
+          />
         </div>
         <select className={styles.select}>
           <option>Status</option>
           <option>Aktiv</option>
-          <option>Passiv</option>
+          <option>....</option>
         </select>
-        <button className={styles.addButton}>
-          Anons əlavə et 
-        </button>
+        <div className={styles.crt_btn}><Create/>Anons əlavə et</div>
       </div>
 
       <div className={styles.tableHeader}>

@@ -36,70 +36,25 @@ const playlists = [
   },
 ];
 
-export default function ProfilHomeContainer() {
+export default function SearchContainer() {
   return (
     <div className={styles.container}>
       
 
-
-      <div className={styles.flexbox}>
-      <h2 className={styles.welcome}>
-        Xoş gəlmişsiniz!
-      </h2>
-
       <div className={styles.searchBox}>
-         <div className={styles.icon}>
-        <Search/>
-        </div>
-        <input
-          type="text"
-          placeholder="Musiqi axtar"
-          className={styles.input}
-        />
-        
+               <div className={styles.icon}>
+              <Search/>
+              </div>
+              <input
+                type="text"
+                placeholder="Musiqi axtar"
+                className={styles.input}
+              />
+              
       </div>
-    </div>
-
-
-
-
-
-
-
-
-
  
       <div>
-      <h1> Sizin zövqünüzə ən uyğun pleylistlər</h1>
-      <div className={styles.grid}>
-        {playlists.map((playlist) => (
-          <PlaylistCard
-            key={playlist.id}
-            title={playlist.title}
-            description={playlist.description}
-            image={playlist.image}
-          />
-        ))}
-      </div>
-      </div>
-
-      <h1 className={styles.heading}>Ən məşhur pleylistlər</h1>
-      <section className={styles.banner}>
-      <div className={styles.textBox}>
-        <h2>İndi (seçdiyin müəssisənin adı)-lar’da ən çox bunlar dinlənilir!</h2>
-        <p>Pleylistin infosu</p>
-        <button>Pleylistə get</button>
-      </div>
-
-      <div className={styles.cardBox}>
-        {/* Yaşıl qutu ilə təmsil edilir */}
-      </div>
-    </section>
-
-
-
-      <div>
-      <h1 className={styles.heading}>XXXXXXXXXXXXXXXXXXXXXXXXX pleylistlər</h1>
+      <h1 className={styles.heading}>Fılan janrda pleylistlər</h1>
       <div className={styles.grid}>
         {playlists.map((playlist) => (
           <PlaylistCard
@@ -112,7 +67,20 @@ export default function ProfilHomeContainer() {
       </div>
       </div>
       <div>
-      <h1 className={styles.heading}>XXXXXXXXXXXXXXXXXXXXXXXXX pleylistlər</h1>
+      <h1 className={styles.heading}>Fılan janrda pleylistlər</h1>
+      <div className={styles.grid}>
+        {playlists.map((playlist) => (
+          <PlaylistCard
+            key={playlist.id}
+            title={playlist.title}
+            description={playlist.description}
+            image={playlist.image}
+          />
+        ))}
+      </div>
+      </div>
+      <div>
+      <h1 className={styles.heading}>Fılan janrda pleylistlər</h1>
       <div className={styles.grid}>
         {playlists.map((playlist) => (
           <PlaylistCard
@@ -127,16 +95,7 @@ export default function ProfilHomeContainer() {
 
 
 
-
-
-
-
-
-
-
-
-
-      </div>
+    </div>
     
   );
 }

@@ -1,15 +1,9 @@
 import Sidebar from "@/components/common/sidebar";
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
 import "../../../globals.scss";
 import styles from './styles.module.scss'
 import ProfileHeader from "@/components/common/profileheader";
-// Space Grotesk fontunu variable olaraq təyin edirik
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
+ 
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,17 +16,16 @@ export default function ProfileLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={spaceGrotesk.variable}>
        
-      <body>
+    <div>
         <ProfileHeader/>
         <div  className={styles["announcement"]}>SINAQ MÜDDƏTİNİN BİTMƏSİNƏ 5 GÜN QALIB</div>
         <div className={styles["layout-container"]}>
           <Sidebar />
           <main className={styles["main"]}>{children}</main>
         </div>
-        
-      </body>
-    </html>
+   </div>     
+
+
   );
 }

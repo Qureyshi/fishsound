@@ -9,13 +9,14 @@
   background-color: #E9E9E9;
   min-height: 100vh;
   color: black;
+  overflow: scroll;
   
 
   
  }
 
  .main{
-  padding: 20px 150px;
+  padding: 20px 100px;
   margin-left:  150px;
   @include mobile {
     margin-left:  0;

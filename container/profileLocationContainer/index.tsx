@@ -1,35 +1,49 @@
 import React from "react";
 import styles from "./styles.module.scss";
+import Search from "@/components/icons/Search";
+import Create from "@/components/icons/Create";
 
 export default function LocationContainer() {
   return (
     <div className={styles.wrapper}>
       <h1>Məkanlar</h1>
       <p className={styles.subtitle}>
-        Mövcud məkanları idarə edə və ya yeni əlavə edə bilərsiniz.
+       Zonalarınızı, yerlərinizi və oxunan musiqiləri idarə edin.
       </p>
 
       <div className={styles.controls}>
-        <div className={styles.search}>
-          <input type="text" placeholder="Məkan axtar" />
-        </div>
+        <div className={styles.searchBox}>
+          <div className={styles.icon}>
+          <Search/>
+          </div>
+          <input
+            type="text"
+            placeholder="Məkan axtar"
+            className={styles.input}
+          />
+              
+      </div>
 
         <select className={styles.select}>
-          <option>Bütün</option>
-          <option>Aktiv</option>
-          <option>Passiv</option>
+          <option>Şəhər</option>
+          <option>Baki</option>
+          <option>Seki</option>
         </select>
 
-        <button className={styles.addButton}>
-          Məkan əlavə et
-        </button>
+        <select className={styles.select}>
+          <option>Məkan</option>
+          <option>Baki</option>
+          <option>Seki</option>
+        </select>
+
+        <div className={styles.crt_btn}><Create/>Məkan əlavə et</div>
       </div>
 
       <div className={styles.tableHeader}>
         <span>Məkan</span>
         <span>Ünvan</span>
         <span>Status</span>
-        <span>Redaktə</span>
+        <span>Hansi mahni oxunur</span>
       </div>
 
       {[1, 2, 3].map((item, i) => (

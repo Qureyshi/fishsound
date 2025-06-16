@@ -60,6 +60,11 @@
   
 }
 
+.contactForm__field {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Inputs with rounded borders */
 .input {
   border: 1px solid #ccc;
@@ -109,6 +114,8 @@ font-size: 18.057px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+margin-bottom: 10px; 
+margin-left: 10px;
 }
 
 /* Responsive: stack inputs vertically on small screens */

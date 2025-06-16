@@ -3,6 +3,11 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import styles from './styles.module.scss'
+import Search from '@/components/icons/Search'
+import Home from '@/components/icons/Home'
+import Location from '@/components/icons/Location'
+import Announce from '@/components/icons/Announce'
+import Playlist from '@/components/icons/Playlist'
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false)
@@ -26,19 +31,19 @@ export default function Sidebar() {
         <nav>
           <ul>
             <li>
-              <Link href="/profile">Ana Səhifə</Link>
+              <Link  className={styles.link} href="/profile"><Home/>Ana Səhifə</Link>
             </li>
             <li>
-              <Link href="/profile/search">Axtar</Link>
+              <Link  className={styles.link} href="/profile/search"><Search/>Axtar</Link>
             </li>
             <li>
-              <Link href="/profile/location">Məkanlar</Link>
+              <Link  className={styles.link} href="/profile/location"><Location/>Məkanlar</Link>
             </li>
             <li>
-              <Link href="/profile/announce">Anonslar</Link>
+              <Link  className={styles.link} href="/profile/announce"><Announce/>Anonslar</Link>
             </li>
             <li>
-              <Link href="/profile">Pleylistlərim</Link>
+              <Link  className={styles.link} href="/profile/playlist"><Playlist/>Pleylistlərim</Link>
             </li>
           </ul>
         </nav>
