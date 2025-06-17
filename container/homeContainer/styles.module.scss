@@ -30,27 +30,23 @@
    
 
 
+ 
 
-
-  h2{
-   font-size: 50px;
-  
+h2 {
+  font-size: 50px;
+  text-align: left;
+  color: transparent;
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.2);
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
+          
    @include tablet {
       font-size: 30px;
    }
     @include mobile {
       font-size: 15px;
    }
-   }
-
-
-h2 {
- 
-  color: transparent;
-  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.2);
-  -webkit-background-clip: text;
-     -moz-background-clip: text;
-          background-clip: text;
 }
 
 

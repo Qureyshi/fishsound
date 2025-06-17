@@ -1,5 +1,5 @@
-@use "@/styles/mixin.module.scss" as *;
 @use "@/styles/variable.module.scss" as *;
+@use "@/styles/mixin.module.scss" as *;
 
 .wrapper {
   background: #eaeaea;
@@ -23,38 +23,32 @@
   gap: 1rem;
   margin-bottom: 1.5rem;
 
-  
-.searchBox {
-  position: relative;
-  display: flex;
-  align-items: center;
-  border-radius: 2rem;
-  padding: 10px;
-  background: #ffffff;
-  
+  .searchBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 10px;
+    background: #ffffff;
 
-  .input {
-    width: 150px;
-    border: none;
-    outline: none;
-    
-    font-size: 1.2rem;
+    .input {
+      width: 150px;
+      border: none;
+      outline: none;
+      font-size: 1.2rem;
 
-    &::placeholder {
+      &::placeholder {
+        color: #888;
+      }
+    }
+
+    .icon {
+      margin-right: 15px;
       color: #888;
-       
+      width: 1.25rem;
+      height: 1.25rem;
     }
   }
-
-  .icon {
-    margin-right: 15px;
-    color: #888;
-    width: 1.25rem;
-    height: 1.25rem;
- 
-  }
-}
-
 
   .select {
     border-radius: 9999px;
@@ -64,39 +58,16 @@
     font-size: 1rem;
   }
 
-  .addButton {
-    background: white;
-    border: 1px solid #ccc;
-    padding: 0.6rem 1.2rem;
-    border-radius: 9999px;
+  .crt_btn {
+    background-color: white;
+    color: #9E9E9E;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 2rem;
     cursor: pointer;
-    font-size: 1rem;
   }
 }
-
-
-
-
-
-
-
-
-
-
-.crt_btn{
-  background-color: white;
-  color: #9E9E9E;
-  display: flex;
-  align-items: center;
-  padding: 10px 15px;
-  border-radius: 2rem;
-  cursor: pointer;
-}
-
 
 .tableHeader {
   display: grid;
@@ -130,10 +101,8 @@
     width: 100%;
     max-width: 150px;
     height: 32px;
-
     border: none;
     outline: none;
-    box-shadow: none;
     background-color: transparent;
 
     &::-webkit-media-controls-panel {
@@ -154,6 +123,110 @@
     cursor: pointer;
     font-size: 1.2rem;
     padding: 0.25rem;
+  }
+}
+
+/* Modal ortak stil */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #00000099;
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: #d3d3d3;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 480px;
+  position: relative;
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #000;
+  }
+
+  textarea {
+    width: 100%;
+    height: 150px;
+    resize: vertical;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    outline: none;
+  }
+
+  .confirmBtn {
+    display: block;
+    margin-left: auto;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    background: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+
+  .closeBtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+}
+
+/* DropZone stili */
+.dropZone {
+  background: #cfcfcf;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+
+  .iconLarge {
+    font-size: 2rem;
+  }
+
+  span {
+    color: #666;
+  }
+
+  .selectFileBtn {
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .aiButton {
+    margin-top: 0.5rem;
+    background: #d4d4d4;
+    color: #888;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: not-allowed;
   }
 }
 

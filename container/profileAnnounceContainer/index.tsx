@@ -1,10 +1,30 @@
-import React from 'react';
+// ProfilAnnounceContainer.tsx
+"use client"
+import React, { useState } from 'react';
 import styles from "./styles.module.scss";
 import Create from '@/components/icons/Create';
 import Search from '@/components/icons/Search';
-//import { FiSearch, FiPlus, FiMoreHorizontal } from 'react-icons/fi';
 
 export default function ProfilAnnounceContainer() {
+  const [isFirstModalOpen, setIsFirstModalOpen] = useState(false);
+  const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const files = e.dataTransfer.files;
+    if (files.length > 0) {
+      setIsFirstModalOpen(false);
+      setIsSecondModalOpen(true);
+    }
+  };
+
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setIsFirstModalOpen(false);
+      setIsSecondModalOpen(true);
+    }
+  };
+
   return (
     <div className={styles.wrapper}>
       <h1>Anonslar</h1>
@@ -15,7 +35,7 @@ export default function ProfilAnnounceContainer() {
       <div className={styles.controls}>
         <div className={styles.searchBox}>
           <div className={styles.icon}>
-          <Search/>
+            <Search />
           </div>
           <input
             type="text"
@@ -26,9 +46,14 @@ export default function ProfilAnnounceContainer() {
         <select className={styles.select}>
           <option>Status</option>
           <option>Aktiv</option>
-          <option>....</option>
+          <option>...</option>
         </select>
-        <div className={styles.crt_btn}><Create/>Anons əlavə et</div>
+        <div
+          className={styles.crt_btn}
+          onClick={() => setIsFirstModalOpen(true)}
+        >
+          <Create /> Anons əlavə et
+        </div>
       </div>
 
       <div className={styles.tableHeader}>
@@ -45,9 +70,47 @@ export default function ProfilAnnounceContainer() {
             Sizin brauzeriniz audio elementini dəstəkləmir.
           </audio>
           <span>1:23</span>
-          <button className={styles.moreButton}> ... </button>
+          <button className={styles.moreButton}>...</button>
         </div>
       ))}
+
+      {isFirstModalOpen && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal}>
+            <button className={styles.closeBtn} onClick={() => setIsFirstModalOpen(false)}>
+              ×
+            </button>
+            <div
+              className={styles.dropZone}
+              onDragOver={(e) => e.preventDefault()}
+              onDrop={handleDrop}
+            >
+              <div className={styles.iconLarge}>⬆️</div>
+              <p>Drag and Drop here</p>
+              <span>or</span>
+              <label className={styles.selectFileBtn}>
+                Select file
+                <input type="file" hidden onChange={handleFileSelect} />
+              </label>
+              <button className={styles.aiButton}>Süni intellekt ilə səsləndir</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {isSecondModalOpen && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal}>
+            <button className={styles.closeBtn} onClick={() => setIsSecondModalOpen(false)}>
+              ×
+            </button>
+            <textarea placeholder="Səsləndirmək istədiyiniz anonsu daxil edin"></textarea>
+            <button className={styles.confirmBtn} onClick={() => setIsSecondModalOpen(false)}>
+              Təsdiqə
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
