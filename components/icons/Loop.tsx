@@ -6,7 +6,7 @@ type Props = {
   height?: string;
 };
 
-const Stop = ({ color = "currentColor", width = "24px", height = "24px" }: Props) => (
+const Loop = ({ color = "currentColor", width = "24px", height = "24px" }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}
@@ -18,9 +18,10 @@ const Stop = ({ color = "currentColor", width = "24px", height = "24px" }: Props
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <rect width="6" height="20" x="4" y="2" rx="2"/><rect width="6" height="20" x="14" y="2" rx="2"/>
+    <path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M3 15h6"/><path d="M6 12v6"/> 
   </svg>
 );
 
-export default Stop;
+export default Loop;
 
+ 

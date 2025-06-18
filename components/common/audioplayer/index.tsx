@@ -1,8 +1,9 @@
 "use client";
-
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./styles.module.scss";
+import Loop from "@/components/icons/Loop";
+import Close from "@/components/icons/Close";
 
 function formatTime(sec: number) {
   const minutes = Math.floor(sec / 60);
@@ -12,23 +13,42 @@ function formatTime(sec: number) {
     .padStart(2, "0")}`;
 }
 
-interface AudioPlayerProps {
-  playlist: {
-    songTitle: string;
-    artist: string;
-    coverImage: string;
-    audioSrc: string;
-  }[];
+interface Song {
+  id: number;
+  title: string;
+  artist: string;
+  album: string;
+  duration: string;
+  cover: string;
+  isPlaying: boolean;
+  audioSrc: string;
 }
 
-const AudioPlayer: React.FC<AudioPlayerProps> = ({ playlist }) => {
+interface AudioPlayerProps {
+  playlist: Song[];
+  currentId: number | null;
+  setCurrentId: React.Dispatch<React.SetStateAction<number | null>>;
+  isPlaying: boolean;
+  setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
+  isFullscreen: boolean;
+  setIsFullscreen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const AudioPlayer: React.FC<AudioPlayerProps> = ({
+  playlist,
+  currentId,
+  setCurrentId,
+  isPlaying,
+  setIsPlaying,
+  isFullscreen,
+  setIsFullscreen,
+}) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const currentSong = playlist[currentIndex];
+  const currentSong =
+    playlist.find((song) => song.id === currentId) || playlist[0];
 
   const togglePlay = () => {
     if (!audioRef.current) return;
@@ -36,7 +56,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ playlist }) => {
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
-      audioRef.current.play();
+      audioRef.current.play().catch(() => {});
       setIsPlaying(true);
     }
   };
@@ -62,85 +82,149 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ playlist }) => {
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev < playlist.length - 1 ? prev + 1 : 0));
+    if (!currentId) return;
+    const currentIndex = playlist.findIndex((s) => s.id === currentId);
+    const nextIndex = currentIndex < playlist.length - 1 ? currentIndex + 1 : 0;
+    setCurrentId(playlist[nextIndex].id);
     setIsPlaying(true);
   };
 
   const handlePrevious = () => {
-    setCurrentIndex((prev) =>
-      prev > 0 ? prev - 1 : playlist.length - 1
-    );
+    if (!currentId) return;
+    const currentIndex = playlist.findIndex((s) => s.id === currentId);
+    const prevIndex =
+      currentIndex > 0 ? currentIndex - 1 : playlist.length - 1;
+    setCurrentId(playlist[prevIndex].id);
     setIsPlaying(true);
   };
 
-  useEffect(() => {
-    if (isPlaying && audioRef.current) {
-      audioRef.current.play();
-    }
-  }, [currentIndex, isPlaying]);
+  const handleEnded = () => {
+    handleNext();
+  };
 
   useEffect(() => {
-    const audio = audioRef.current;
+    if (!audioRef.current || !currentSong) return;
 
-    if (audio) {
-      const handler = () => setDuration(audio.duration);
-      if (audio.readyState >= 1) {
-        handler();
-      } else {
-        audio.addEventListener("loadedmetadata", handler);
-      }
-
-      return () => {
-        audio.removeEventListener("loadedmetadata", handler);
-      };
+    if (audioRef.current.src !== currentSong.audioSrc) {
+      audioRef.current.src = currentSong.audioSrc;
+      setCurrentTime(0);
     }
-  }, [currentIndex]);
+
+    if (isPlaying) {
+      audioRef.current.play().catch(() => {});
+    } else {
+      audioRef.current.pause();
+    }
+  }, [currentId, isPlaying]);
+
+  const progressPercent = (currentTime / duration) * 100 || 0;
 
   return (
-    <div className={styles.playerContainer}>
+    <div
+      className={
+        isFullscreen ? styles.fullscreenPlayerContainer : styles.playerContainer
+      }
+    >
       <audio
         ref={audioRef}
-        src={currentSong.audioSrc}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
-        onEnded={handleNext}
+        onEnded={handleEnded}
       />
 
-      <div className={styles.songInfo}>
-        <Image
-          src={currentSong.coverImage}
-          alt={currentSong.songTitle}
-          width={40}
-          height={40}
-        />
-        <div className={styles.songText}>
-          <span className={styles.title}>{currentSong.songTitle}</span>
-          <span className={styles.artist}>{currentSong.artist}</span>
-        </div>
-      </div>
+      {isFullscreen ? (
+        <>
+          <button
+            onClick={() => setIsFullscreen(false)}
+            className={styles.closeButton}
+          >
+            <Close/> 
+          </button>
 
-      <div className={styles.controls}>
-        <button onClick={handlePrevious}>Prev</button>
-        <button onClick={togglePlay}>{isPlaying ? "Pause" : "Play"}</button>
-        <button onClick={handleNext}>Next</button>
+          <div className={styles.fullCoverWrapper}>
+            <Image
+              src={currentSong.cover}
+              alt={currentSong.title}
+              width={300}
+              height={300}
+              className={styles.fullCoverImage}
+            />
+          </div>
 
-        <span className={styles.time}>
-          {formatTime(currentTime)} / {formatTime(duration)}
-        </span>
+          <div className={styles.songTextCenter}>
+            <h1>{currentSong.title}</h1>
+            <p>{currentSong.artist}</p>
+          </div>
 
-        <input
-          type="range"
-          min={0}
-          max={duration}
-          value={currentTime}
-          onChange={handleSeek}
-          className={styles.progress}
-        />
-      </div>
+          <div className={styles.fullControls}>
+            <button onClick={handlePrevious}>⏮</button>
+            <button onClick={togglePlay}>{isPlaying ? "⏸" : "▶"}</button>
+            <button onClick={handleNext}>⏭</button>
+          </div>
 
-      <div className={styles.expand}>
-        {/* Expand icon (if needed) */}
-      </div>
+          <div className={styles.progressWrapper}>
+            <input
+              type="range"
+              min={0}
+              max={duration}
+              value={currentTime}
+              onChange={handleSeek}
+              className={styles.progress}
+              style={{
+                background: `linear-gradient(to right, white ${progressPercent}%, black ${progressPercent}%)`,
+              }}
+            />
+            <div className={styles.timeRow}>
+              <span>{formatTime(currentTime)}</span>
+              <span>{formatTime(duration)}</span>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className={styles.songInfo}>
+            <Image
+              src={currentSong.cover}
+              alt={currentSong.title}
+              width={48}
+              height={48}
+              className={styles.coverImage}
+            />
+            <div className={styles.songText}>
+              <span className={styles.title}>{currentSong.title}</span>
+              <span className={styles.artist}>{currentSong.artist}</span>
+            </div>
+          </div>
+
+          <div className={styles.controls}>
+            <button onClick={handlePrevious}>⏮</button>
+            <button onClick={togglePlay}>{isPlaying ? "⏸" : "▶"}</button>
+            <button onClick={handleNext}>⏭</button>
+
+            <div className={styles.progressWrapper}>
+              <input
+                type="range"
+                min={0}
+                max={duration}
+                value={currentTime}
+                onChange={handleSeek}
+                className={styles.progress}
+                style={{
+                  background: `linear-gradient(to right, white ${progressPercent}%, black ${progressPercent}%)`,
+                }}
+              />
+              <div className={styles.timeRow}>
+                <span>{formatTime(currentTime)}</span>
+                <span>{formatTime(duration)}</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <Loop />
+          </div>
+        </>
+      )}
     </div>
   );
 };
