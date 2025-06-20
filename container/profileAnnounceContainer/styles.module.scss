@@ -129,6 +129,11 @@
   }
 }
 
+.table {
+  overflow-x: auto;
+  padding-bottom: 300px;
+}
+
 .tableHeader {
   display: grid;
   grid-template-columns: 2fr 2fr 2fr 1fr;
@@ -136,6 +141,11 @@
   font-weight: bold;
   margin-bottom: 1rem;
   color: #555;
+  min-width: 500px;
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .row {
@@ -147,11 +157,12 @@
   border-radius: 10px;
   margin-bottom: 0.75rem;
   gap: 1rem;
- 
+  min-width: 500px;
 
-  span {
-    overflow: hidden;
-    text-overflow: ellipsis;
+  @include mobile {
+    text-align: center;
+    grid-template-columns: 1fr;
+    min-width: auto;
   }
 
   .moreButton {
@@ -161,7 +172,16 @@
     font-size: 1.2rem;
     padding: 0.25rem;
     position: relative;
-     
+  }
+}
+
+.edit {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+
+  @include mobile {
+    justify-content: center;
   }
 }
 
@@ -289,17 +309,5 @@
     border: none;
     border-radius: 5px;
     cursor: not-allowed;
-  }
-}
-
-@media (max-width: 768px) {
-  .controls {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .row {
-    grid-template-columns: 1fr;
-    text-align: center;
   }
 }

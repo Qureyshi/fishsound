@@ -44,7 +44,6 @@ export default function PlaylistContainer() {
         ))}
       </div>
 
-      {/* Modal */}
       {isModalOpen && (
         <div className={styles.modalOverlay}>
           <div className={styles.modal}>

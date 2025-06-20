@@ -7,8 +7,8 @@ import Arrowdown from "@/components/icons/Arrowdown";
 import Edit from "@/components/icons/Edit";
 
 const locations = [
-  { id: 1, place: "Zeyd Kabab", address: "Bakı, Tabriz küç, 20B", status: "Aktiv", song: "Kingdom - Miyagi" },
-  { id: 2, place: "Sofa Lounge", address: "Bakı, Nərimanov pr, 10A", status: "Passiv", song: "Freestyle - Jony" },
+  { id: 1, place: "Zeyd Kabab", address: "Bakı, Tabriz küç, 20B", status: "Status", song: "Kingdom - Miyagi" },
+  { id: 2, place: "Sofa Lounge", address: "Bakı, Nərimanov pr, 10A", status: "Status", song: "Freestyle - Jony" },
   { id: 3, place: "Tufan Cafe", address: "Şəki, İsmayıllı yolu 45", status: "Aktiv", song: "Oy dağlar - Röya" },
 ];
 
@@ -47,8 +47,6 @@ export default function LocationContainer() {
             <input type="text" placeholder="Məkan axtar" className={styles.input} />
           </div>
 
-
-          
           <div className={styles.selectWrapper}>
             <select>
               <option>Şəhər</option>
@@ -57,7 +55,6 @@ export default function LocationContainer() {
             </select>
             <span className={styles.arrowIcon}><Arrowdown/></span>
           </div>
-
 
           <div className={styles.selectWrapper}>
             <select>

@@ -156,18 +156,30 @@ const handleConfirm = (selectedIds: number[]) => {
             <h1 className={styles.title}>Mənim Playlistim</h1>
 
             <div className={styles.actions}>
-              <button className={styles.play} onClick={handleTogglePlay}>
-                {isPlaying ? <Stop /> : <Play />}
-              </button>
-              <button className={styles.location} onClick={() => setIsLocationOpen(true)}>
-                <Location />
-              </button>
-              <button className={styles.add} onClick={() => setIsAddModalOpen(true)}>
-                <Plus />
-              </button>
-              <button className={styles.edit}>
-                <Update />
-              </button>
+              <div  className={styles.action_btn}>
+                <button className={styles.play} onClick={handleTogglePlay}>
+                  {isPlaying ? <Stop /> : <Play />} 
+                </button>
+                <div>Başlat</div>
+              </div>
+              <div  className={styles.action_btn}>
+                <button className={styles.location} onClick={() => setIsLocationOpen(true)}>
+                  <Location />
+                </button>
+                <div>Məkan seç</div>
+              </div>
+              <div  className={styles.action_btn}>
+                <button className={styles.add} onClick={() => setIsAddModalOpen(true)}>
+                  <Plus />
+                </button>
+                <div>Əlavə et</div>
+              </div>
+              <div  className={styles.action_btn}>
+                <button className={styles.edit}>
+                  <Update />
+                </button>
+                <div>Düzəliş et</div>
+              </div>
             </div>
           </div>
           <div className={styles.playlistImage}>
@@ -181,6 +193,8 @@ const handleConfirm = (selectedIds: number[]) => {
           </div>
         </div>
 
+        <div className={styles.playlistdata}>5 mahnı | 24 dəqiqə | Ən son dəyişiklik 01.01.2025 tarixdə edilib.</div>
+        <div className={styles.table}>
         <div className={styles.songList}>
           <div className={styles.songHeader}>
             <span>Mahnı adı</span>
@@ -200,10 +214,10 @@ const handleConfirm = (selectedIds: number[]) => {
               setIsFullscreen={setIsFullscreen}
             />
           ))}
+          </div>
         </div>
-      </div>
+       </div>
 
-      {/* AudioPlayer yalnız bir mahnı seçiləndə göstərilsin */}
       {currentId !== null && (
         <AudioPlayer
           playlist={songs}
@@ -225,9 +239,6 @@ const handleConfirm = (selectedIds: number[]) => {
       {isAddModalOpen && (
         <AddSongModal songs={addsongs} onClose={() => setIsAddModalOpen(false)} onConfirm={handleConfirm}  />
       )}
-       
-       
- 
     </>
   );
 };

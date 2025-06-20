@@ -3,13 +3,14 @@
 
 .songRow {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 2fr 2fr 1fr 1fr;
   align-items: center;
   padding: 15px;
   background: #fff;
   margin-bottom: 10px;
   border-radius: 8px;
   cursor: pointer;
+  min-width: 500px;
 
   span {
     text-align: center;
@@ -53,7 +54,8 @@
     display: flex;
     gap: 10px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+     
 
     .more {
       background: none;

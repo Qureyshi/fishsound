@@ -7,7 +7,7 @@
   align-items: flex-start;
   gap: 0.5rem;
   padding: 1rem;
-  border: 2px solid #a855f7; // purple border
+  border: 2px solid #a855f7;  
   border-radius: 1rem;
   background: white;
   max-width: 600px;
@@ -17,7 +17,7 @@
 }
 
 .tag {
-  background-color: #a855f733; // light purple background
+  background-color: #a855f733;  
   color: #a855f7;
   font-size: 0.75rem;
   font-weight: 600;
@@ -44,7 +44,7 @@
  
   }
 .highlight {
-  background: linear-gradient(to right, #3b82f6, #ef4444); // blue to red
+  background: linear-gradient(to right, #3b82f6, #ef4444);  
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;

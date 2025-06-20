@@ -38,66 +38,63 @@ const playlists = [
 
 export default function SearchContainer() {
   return (
-    <div className='main'>
-    <div className={styles.container}>
-      
+    <div className="main">
+      <div className={styles.container}>
 
-      <div className={styles.searchBox}>
-               <div className={styles.icon}>
-              <Search/>
-              </div>
-              <input
-                type="text"
-                placeholder="Musiqi axtar"
-                className={styles.input}
+        <div className={styles.searchBox}>
+          <div className={styles.icon}>
+            <Search />
+          </div>
+          <input
+            type="text"
+            placeholder="Musiqi axtar"
+            className={styles.input}
+          />
+        </div>
+
+        <div>
+          <h1 className={styles.heading}>Fılan janrda pleylistlər</h1>
+          <div className={styles.grid}>
+            {playlists.map((playlist) => (
+              <PlaylistCard
+                key={playlist.id}
+                title={playlist.title}
+                description={playlist.description}
+                image={playlist.image}
               />
-              
-      </div>
- 
-      <div>
-      <h1 className={styles.heading}>Fılan janrda pleylistlər</h1>
-      <div className={styles.grid}>
-        {playlists.map((playlist) => (
-          <PlaylistCard
-            key={playlist.id}
-            title={playlist.title}
-            description={playlist.description}
-            image={playlist.image}
-          />
-        ))}
-      </div>
-      </div>
-      <div>
-      <h1 className={styles.heading}>Fılan janrda pleylistlər</h1>
-      <div className={styles.grid}>
-        {playlists.map((playlist) => (
-          <PlaylistCard
-            key={playlist.id}
-            title={playlist.title}
-            description={playlist.description}
-            image={playlist.image}
-          />
-        ))}
-      </div>
-      </div>
-      <div>
-      <h1 className={styles.heading}>Fılan janrda pleylistlər</h1>
-      <div className={styles.grid}>
-        {playlists.map((playlist) => (
-          <PlaylistCard
-            key={playlist.id}
-            title={playlist.title}
-            description={playlist.description}
-            image={playlist.image}
-          />
-        ))}
-      </div>
-      </div>
+            ))}
+          </div>
+        </div>
 
+        <div>
+          <h1 className={styles.heading}>Fılan janrda pleylistlər</h1>
+          <div className={styles.grid}>
+            {playlists.map((playlist) => (
+              <PlaylistCard
+                key={playlist.id}
+                title={playlist.title}
+                description={playlist.description}
+                image={playlist.image}
+              />
+            ))}
+          </div>
+        </div>
 
+        <div>
+          <h1 className={styles.heading}>Fılan janrda pleylistlər</h1>
+          <div className={styles.grid}>
+            {playlists.map((playlist) => (
+              <PlaylistCard
+                key={playlist.id}
+                title={playlist.title}
+                description={playlist.description}
+                image={playlist.image}
+              />
+            ))}
+          </div>
+        </div>
 
+      </div>
     </div>
-    </div>
-    
   );
 }

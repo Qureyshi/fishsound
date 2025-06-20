@@ -21,7 +21,7 @@
     overflow-x: auto;
   }
 
-  @media (max-width: 480px) {
+  @include mobile {
     padding: 1rem;
   }
 }
@@ -67,7 +67,8 @@
     padding: 10px 15px;
     border-radius: 2rem;
     cursor: pointer;
-    span{
+
+    span {
       padding-right: 5px;
     }
   }
@@ -76,9 +77,6 @@
     position: relative;
     display: flex;
     align-items: center;
-  
-
-    
     font-size: 1rem;
     width: 150px;
     cursor: pointer;
@@ -87,9 +85,9 @@
       border: none;
       background-color: #ffffff;
       color: #9E9E9E;
-      appearance: none; 
+      appearance: none;
       border-radius: 9999px;
-      padding:15px;
+      padding: 15px;
       font-size: inherit;
       width: 100%;
       cursor: pointer;
@@ -117,14 +115,15 @@
   font-weight: bold;
   margin-bottom: 1rem;
   color: #555;
-    @include lg_tablet {
+
+  @include lg_tablet {
     min-width: 800px;
   }
 }
 
 .row {
   position: relative;
-  overflow: visible; // dropdownun kəsilməməsi üçün
+  overflow: visible;
   display: grid;
   grid-template-columns: 2fr 2fr 1fr 2fr 1fr;
   align-items: center;
@@ -140,13 +139,13 @@
 
   span {
     white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
   }
 
   .actions {
     position: relative;
-    overflow: visible; // dropdownun kəsilməməsi üçün
+    display: flex;
+    justify-content: flex-end;
+    overflow: visible;
   }
 
   .moreButton {
@@ -166,7 +165,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     padding: 0.5rem;
-    z-index: 1000; // artırıldı
+    z-index: 1000;
     font-size: 14px;
     min-width: 160px;
 

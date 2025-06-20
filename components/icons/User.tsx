@@ -6,7 +6,7 @@ type Props = {
   height?: string;
 };
 
-const Close = ({ color = "currentColor", width = "24px", height = "24px" }: Props) => (
+const User = ({ color = "currentColor", width = "24px", height = "24px" }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}
@@ -18,9 +18,9 @@ const Close = ({ color = "currentColor", width = "24px", height = "24px" }: Prop
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path d="M18 6 6 18"/><path d="m6 6 12 12"/> 
+    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/> 
   </svg>
 );
 
-export default Close;
+export default User;
  

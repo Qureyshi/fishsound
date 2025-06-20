@@ -1,19 +1,15 @@
 @use "@/styles/mixin.module.scss" as *;
 @use "@/styles/variable.module.scss" as *;
 
- .container {
+.container {
   padding: 20px;
 }
-
 
 .flexbox {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  
- 
- 
 }
 
 .welcome {
@@ -28,18 +24,15 @@
   border-radius: 2rem;
   padding: 15px;
   background: #ffffff;
-  
 
   .input {
     width: 200px;
     border: none;
     outline: none;
-    
     font-size: 1.2rem;
 
     &::placeholder {
       color: #888;
-       
     }
   }
 
@@ -48,11 +41,8 @@
     color: #888;
     width: 1.25rem;
     height: 1.25rem;
- 
   }
 }
-
-
 
 .banner {
   display: flex;
@@ -63,7 +53,6 @@
   padding: 1rem;
   border: 1px solid #d8d8d8;
   border-radius: 10px;
-
   background: linear-gradient(90deg, #0f79c1, #aadeff);
 }
 
@@ -104,25 +93,21 @@
   border-radius: 20px;
 }
 
-
-
-
-
-
-.heading{
+.heading {
   margin-bottom: 30px;
   margin-top: 50px;
 }
+
 .grid {
   display: grid;
-   grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
 
-  @include tablet{
+  @include tablet {
     grid-template-columns: repeat(3, 1fr);
   }
-   @include mobile_lg{
+
+  @include mobile_lg {
     grid-template-columns: repeat(2, 1fr);
   }
 }
- 

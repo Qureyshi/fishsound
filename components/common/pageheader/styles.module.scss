@@ -1,8 +1,7 @@
 @use "@/styles/mixin.module.scss" as *;
 @use "@/styles/variable.module.scss" as *;
 
-
-.header-container{
+.header-container {
   background-color: #ffffff;
   box-sizing: border-box;
   padding: 80px;
@@ -12,31 +11,27 @@
   align-items: center;
   margin: 80px 0;
 
-  
-    @include lg_tablet {
-      padding: 40px;
-       margin: 30px  0;
-   }
-  
-  @include mobile{
-    padding: 20px;
+  @include lg_tablet {
+    padding: 40px;
+    margin: 30px 0;
   }
 
-  
+  @include mobile {
+    padding: 20px;
+  }
 }
 
-.circle{
+.circle {
   background-color: #0D9EEC;
   width: 50px;
   height: 50px;
   border-radius: 50px;
-  @include tablet{
+
+  @include tablet {
     width: 20px;
-  height: 20px;
+    height: 20px;
   }
 }
-
- 
 
 .txt {
   background: linear-gradient(
@@ -48,19 +43,19 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
-    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.2);
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.2);
 
   font-size: 55px;
- 
   position: relative;
-  
   display: flex;
   align-items: center;
   justify-content: center;
-  @include tablet{
+
+  @include tablet {
     font-size: 45px;
   }
-  @include mobile{
+
+  @include mobile {
     font-size: 35px;
   }
 }

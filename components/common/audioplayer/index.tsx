@@ -224,10 +224,8 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
                   background: `linear-gradient(to right, white ${progressPercent}%, #939393 ${progressPercent}%)`,
                 }}
               />
-              <div className={styles.timeRow}>
-                <span>{formatTime(currentTime)}</span>
-                <span>{formatTime(duration)}</span>
-              </div>
+              <span  className={styles.currenttime}>{formatTime(currentTime)}</span>
+            <span  className={styles.duration}>{formatTime(duration)}</span>
             </div>
           </div>
 

@@ -1,33 +1,30 @@
 @use "@/styles/mixin.module.scss" as *;
 @use "@/styles/variable.module.scss" as *;
 
- .business_features{
-   display: flex;
-   justify-content: space-between;
- }
+.business_features {
+  display: flex;
+  justify-content: space-between;
+}
 
- .feature{
+.feature {
   margin-bottom: 80px;
-   h1{
-       font-size: 42px;
-   }
-    div{
-      font-size: 35px;
-      margin-bottom: 20px;
-    }
- }
+  h1 {
+    font-size: 42px;
+  }
+  div {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+}
 
- 
-.btn{
+.btn {
   display: flex;
   justify-content: center;
   margin-top: 70px;
-  h2{
+  h2 {
     background-color: #0d9eec;
     padding: 50px 150px;
     border-radius: 45px;
     text-align: center;
-     
   }
-    
 }

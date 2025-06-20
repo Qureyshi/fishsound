@@ -11,9 +11,7 @@ export default function LoginContainer() {
   return (
     <>
       <div className="body_container">
-
-    
-      <div className={styles.container}>
+        <div className={styles.container}>
         <h2 className={styles.title}>Fish Sound hesabına daxil ol</h2>
         <form className={styles.form}>
           <input type="email" placeholder="E-posta" className={styles.input} />

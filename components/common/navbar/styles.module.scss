@@ -19,18 +19,18 @@
     flex-direction: column;
     position: fixed;
     top: 0;
-    right:  -100vw;              // Soldan gizlətmək üçün buranı dəyişdim
+    right:  -100vw;  
     height: 100vh;
     width: 250px;
     background-color: #111;
     padding-top: 80px;
-    transition: right 0.3s ease-in-out; // right yox, left istifadə olunur
+    transition: right 0.3s ease-in-out; 
     z-index: 1000;
   }
 }
 
 .show_menu {
-   right: 0;     // Soldan açılacaq
+   right: 0;
 }
 
 .nav_link {

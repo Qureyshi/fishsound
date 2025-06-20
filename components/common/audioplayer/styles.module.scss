@@ -5,7 +5,6 @@
   background-color: #bfbfbf;
   color: #fff;
   padding: 10px;
- 
   box-sizing: border-box;
   position: fixed;
   bottom: 0;
@@ -21,6 +20,11 @@
     width: 100%;
     padding: 0 15px;
   }
+
+  @include mobile_lg {
+    flex-direction: column;
+    
+  }
 }
 
 .songInfo {
@@ -28,9 +32,11 @@
   align-items: center;
   gap: 10px;
 
-  @include mobile{
-    display: none;
+  @include mobile_lg {
+    flex-direction: column;
+    padding-top: 20px;
   }
+
   .coverImage {
     border-radius: 8px;
   }
@@ -57,14 +63,18 @@
 .controls {
   display: flex;
   align-items: center;
-  gap: 15px;
 
-  @include mobile{
+  div {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  @include mobile_lg {
     flex-direction: column;
   }
 
   button {
-    padding: 5px 12px;
+    margin-right: 10px;
     background: transparent;
     border: none;
     border-radius: 5px;
@@ -73,6 +83,10 @@
     font-weight: 500;
     cursor: pointer;
     transition: background 0.2s ease;
+
+    @include mobile_lg {
+      margin-top: 20px;
+    }
 
     &:hover {
       background: #e0e0e0;
@@ -85,12 +99,15 @@
 
   .progressWrapper {
     display: flex;
-    margin-top: 25px;
     flex-direction: column;
     align-items: center;
     width: 200px;
     gap: 4px;
     position: relative;
+
+    @include mobile_lg {
+      margin: 20px 0;
+    }
 
     .progress {
       width: 100%;
@@ -98,7 +115,6 @@
       border-radius: 3px;
       appearance: none;
       cursor: pointer;
- 
 
       &::-webkit-slider-thumb {
         appearance: none;
@@ -135,7 +151,7 @@
 
 .fullscreenPlayerContainer {
   position: fixed;
-      box-sizing: border-box;
+  box-sizing: border-box;
   top: 0;
   left: 0;
   width: 100%;
@@ -163,7 +179,6 @@
 
   .fullCoverWrapper {
     margin-bottom: 24px;
-
   }
 
   .fullCoverImage {
@@ -178,49 +193,39 @@
     h1 {
       font-size: 32px;
       font-weight: bold;
-      padding: 0;
       margin: 0;
     }
 
     p {
       font-size: 24px;
       color: #ccc;
-      padding: 0;
       margin: 0;
     }
   }
 
-
-
-  .fullControlsWrapper{
- 
+  .fullControlsWrapper {
     width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
-    @include lg_tablet{
+
+    @include lg_tablet {
       flex-direction: column;
     }
-    
-    
   }
-
 
   .fullControls {
     display: flex;
-    
     align-items: center;
     justify-content: center;
 
-
-    @include lg_tablet{
+    @include lg_tablet {
       margin-bottom: 30px;
     }
- 
+
     button {
       background: transparent;
-      color: rgb(255, 255, 255);
+      color: #fff;
       font-size: 18px;
       padding: 8px 14px;
       border: none;
@@ -269,32 +274,27 @@
         border-radius: 50%;
         cursor: pointer;
       }
-
-      
     }
-    
-  
   }
 }
 
-.edit{
- margin: 10px;
- @include lg_tablet{
-  margin-top: 30px;
- }
-}
+.edit {
+  margin: 10px;
 
-.currenttime{
+  @include lg_tablet {
+    margin-top: 30px;
+  }
+}
+.currenttime {
   position: absolute;
   top: 15px;
   left: 0;
   font-size: 12px;
- 
 }
-.duration{
+
+.duration {
   position: absolute;
   top: 15px;
   right: 0;
   font-size: 12px;
- 
 }

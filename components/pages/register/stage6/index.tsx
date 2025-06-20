@@ -18,9 +18,6 @@ type Props = {
   onNext: () => void;
 }
 
- 
-
-
 export default function GenreSelector({ onNext }: Props) {
   const [selected, setSelected] = useState<string[]>([]);
 

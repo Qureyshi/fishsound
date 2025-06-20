@@ -1,21 +1,15 @@
 @use "@/styles/mixin.module.scss" as *;
 @use "@/styles/variable.module.scss" as *;
 
- 
-$blue-100: #0797e4;
-
-
 .footer_container {
     padding:   30px 0;
-    background-color: $blue-100;
+    background-color: #0797e4;
     margin-top: 80px;
 }
 .footer {
-  
  display: flex;
  flex-wrap: wrap;
- 
-  justify-content: space-between;
+ justify-content: space-between;
 }
 
 .copyright{
@@ -28,8 +22,6 @@ $blue-100: #0797e4;
   font-weight: 300;
 }
 
-
-
 .input-button-wrapper {
   position: relative;
   width: 100%;
@@ -39,7 +31,7 @@ $blue-100: #0797e4;
 
 .email-input {
   width: 100%;
-  padding: 13px 100px 13px 13px; // space for button on right
+  padding: 13px 100px 13px 13px;
   font-size: 16px;
   border-radius: 2rem;
   border: 1px solid #ccc;
@@ -70,7 +62,7 @@ $blue-100: #0797e4;
   height: 18px;
   appearance: none;
   -webkit-appearance: none;
-  background-color: #E3E3E3; // background grey
+  background-color: #E3E3E3;
   border-radius: 4px;
   border: none;
   cursor: pointer;
@@ -86,7 +78,7 @@ $blue-100: #0797e4;
       top: 1px;
       width: 6px;
       height: 10px;
-      border: solid black; // light grey check mark
+      border: solid black;
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
     }

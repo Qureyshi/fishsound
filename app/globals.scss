@@ -29,6 +29,7 @@ body {
 }
 
  .main{
+ 
   padding: 20px 100px;
   margin-left:  150px;
   @include mobile {
@@ -36,7 +37,7 @@ body {
     padding: 10px ;
   }
    @include lg_tablet {
-     padding: 10px ;
+     padding: 0;
   }
  }
 

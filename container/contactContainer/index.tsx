@@ -9,9 +9,9 @@ export default function ContactContainer() {
       <div className="body_container">
         
         <PageHeader title="Əlaqə" />
-
+        
         <div className={`${styles.header} m_b m_t`}>Bizimlə əlaqə saxlamağınız üçün</div>
-
+        
         <div className={styles.contactCard}>
           <div className={styles.contactContent}>
             <div className={styles.sectionTitle}>Ünvan</div>
@@ -27,25 +27,25 @@ export default function ContactContainer() {
         </div>
 
         <div className={`${styles.header} m_b m_t`}>Bizim sizinlə əlaqə saxlamağımız üçün</div>
-
+        
         <form className={styles.contactForm}>
           <div className={styles.contactForm__column}>
             <div className={styles.contactForm__field}>
               <label className={styles.inputLabel}>Ad</label>
               <input className={styles.input} type="text" placeholder="Mustafa" />
             </div>
-
+            
             <div className={styles.contactForm__field}>
               <label className={styles.inputLabel}>E-poçt</label>
               <input className={styles.input} type="email" placeholder="user@example.com" />
             </div>
-
+            
             <div className={styles.contactForm__field}>
               <label className={styles.inputLabel}>Tarix</label>
               <input className={styles.input} type="text" placeholder="01/01/2025" />
             </div>
           </div>
-
+          
           <div className={styles.contactForm__column}>
             <div className={styles.contactForm__field}>
               <label className={styles.inputLabel}>Soyad</label>
@@ -62,8 +62,7 @@ export default function ContactContainer() {
             </button>
           </div>
         </form>
-
-        
+      
       </div>
       <Footer />
     </>

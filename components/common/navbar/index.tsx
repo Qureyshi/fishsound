@@ -22,7 +22,6 @@ export default function Navbar() {
         height={100}
       />
 
-      {/* Hamburger Icon     {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}             */}
       <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <Close/> : <Menu/>}
       </div>

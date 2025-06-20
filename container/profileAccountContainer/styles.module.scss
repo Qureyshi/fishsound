@@ -6,13 +6,10 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-
-  
 }
 
 .accountSection {
   background: #eaeaea;
- 
   border-radius: 8px;
 
   h2 {
@@ -22,7 +19,6 @@
   .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    
     gap: 1rem;
 
     @include tablet {
@@ -44,6 +40,11 @@
         background-color: #fff;
         outline: none;
         border: none;
+        transition: box-shadow 0.3s ease;
+
+        &:focus {
+          box-shadow: 0 0 0 3px #0ea5e9;
+        }
       }
     }
   }
@@ -78,14 +79,17 @@
       gap: 1rem;
       margin-top: 1rem;
 
-       
-
       button {
         padding: 0.5rem 1rem;
         border-radius: 6px;
         border: none;
         cursor: pointer;
         font-size: 1rem;
+        transition: background-color 0.3s ease, color 0.3s ease, filter 0.3s ease;
+
+        &:hover {
+          filter: brightness(0.9);
+        }
       }
 
       .primary {
@@ -100,7 +104,8 @@
     }
   }
 }
-.correct{
+
+.correct {
   display: flex;
   justify-content: flex-end;
 }

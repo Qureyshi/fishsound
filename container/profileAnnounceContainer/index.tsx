@@ -12,10 +12,29 @@ export default function ProfilAnnounceContainer() {
   const [isFirstModalOpen, setIsFirstModalOpen] = useState(false);
   const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
-  const [progresses, setProgresses] = useState<number[]>([0, 0]);
+  const [progresses, setProgresses] = useState<number[]>([]);
   const [openDropdownIndex, setOpenDropdownIndex] = useState<number | null>(null);
 
   const audioRefs = useRef<HTMLAudioElement[]>([]);
+
+  const [announcements, setAnnouncements] = useState([
+    {
+      id: 1,
+      title: "Səhər Elanı",
+      audio: "https://www.orangefreesounds.com/wp-content/uploads/2016/07/Piano-Concerto-No.23-In-A-Major-K-488-Adagio.mp3",
+      duration: "1:23",
+    },
+    {
+      id: 2,
+      title: "Axşam Elanı",
+      audio: "https://www.orangefreesounds.com/wp-content/uploads/2016/07/Piano-Concerto-No.23-In-A-Major-K-488-Adagio.mp3",
+      duration: "1:23",
+    },
+  ]);
+
+  useEffect(() => {
+    setProgresses(new Array(announcements.length).fill(0));
+  }, [announcements]);
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -87,7 +106,6 @@ export default function ProfilAnnounceContainer() {
     });
   };
 
-  // Dropdown-u başqa yerə kliklə bağlamaq
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -131,6 +149,7 @@ export default function ProfilAnnounceContainer() {
           </div>
         </div>
 
+       <div className={styles.table}>
         <div className={styles.tableHeader}>
           <span>Anonsun adı</span>
           <span>Dinlə</span>
@@ -138,13 +157,15 @@ export default function ProfilAnnounceContainer() {
           <span></span>
         </div>
 
-        {[1, 2].map((_, i) => (
-          <div key={i} className={styles.row}>
-            <span>Anons №{i + 1}</span>
+        {announcements.map((announce, i) => (
+          <div key={announce.id} className={styles.row}>
+            <span>{announce.title}</span>
+
             <div className={styles.customPlayer}>
               <button onClick={() => togglePlay(i)} className={styles.playButton}>
                 {playingIndex === i ? <Stop /> : <Play />}
               </button>
+
               <div
                 className={styles.progressWrapper}
                 onClick={(e) => handleProgressClick(i, e)}
@@ -154,17 +175,20 @@ export default function ProfilAnnounceContainer() {
                   style={{ width: `${progresses[i]}%` }}
                 />
               </div>
+
               <audio
                 ref={(el) => {
                   if (el) audioRefs.current[i] = el;
                 }}
-                src="https://www.orangefreesounds.com/wp-content/uploads/2016/07/Piano-Concerto-No.23-In-A-Major-K-488-Adagio.mp3"
+                src={announce.audio}
                 onTimeUpdate={() => handleTimeUpdate(i)}
                 onEnded={() => handleEnded(i)}
               />
             </div>
-            <span>1:23</span>
-            <div style={{ position: 'relative' }}>
+
+            <span>{announce.duration}</span>
+
+            <div className={styles.edit}>
               <button
                 className={styles.moreButton}
                 onClick={() => setOpenDropdownIndex(openDropdownIndex === i ? null : i)}
@@ -183,7 +207,7 @@ export default function ProfilAnnounceContainer() {
             </div>
           </div>
         ))}
-
+        </div>
         {isFirstModalOpen && (
           <div className={styles.modalOverlay}>
             <div className={styles.modal}>
