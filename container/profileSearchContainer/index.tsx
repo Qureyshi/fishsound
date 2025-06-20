@@ -38,6 +38,7 @@ const playlists = [
 
 export default function SearchContainer() {
   return (
+    <div className='main'>
     <div className={styles.container}>
       
 
@@ -95,6 +96,7 @@ export default function SearchContainer() {
 
 
 
+    </div>
     </div>
     
   );

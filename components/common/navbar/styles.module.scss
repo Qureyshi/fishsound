@@ -6,10 +6,8 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
- 
   width: 100%;
   padding: 15px 2px;
-   
 }
 
 .nav_links {
@@ -21,18 +19,18 @@
     flex-direction: column;
     position: fixed;
     top: 0;
-    right: -100%;
+    right:  -100vw;              // Soldan gizlətmək üçün buranı dəyişdim
     height: 100vh;
     width: 250px;
     background-color: #111;
     padding-top: 80px;
-    transition: right 0.3s ease-in-out;
+    transition: right 0.3s ease-in-out; // right yox, left istifadə olunur
     z-index: 1000;
   }
 }
 
 .show_menu {
-  right: 0 !important;
+   right: 0;     // Soldan açılacaq
 }
 
 .nav_link {
@@ -59,11 +57,9 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: #ffffff;  
- 
+    color: #ffffff;
   }
 }
-
 
 .login_btn {
   background: linear-gradient(
@@ -84,9 +80,8 @@
   height: 90px;
   position: relative;
 
-  @include tablet{
+  @include tablet {
     height: 50px;
-  
   }
 }
 

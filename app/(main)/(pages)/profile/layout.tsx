@@ -22,7 +22,7 @@ export default function ProfileLayout({
         <div  className={styles["announcement"]}>SINAQ MÜDDƏTİNİN BİTMƏSİNƏ 5 GÜN QALIB</div>
         <div className={styles["layout-container"]}>
           <Sidebar />
-          <main className={styles["main"]}>{children}</main>
+          {children} 
         </div>
    </div>     
 

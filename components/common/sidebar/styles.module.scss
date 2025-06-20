@@ -19,8 +19,20 @@
   .link{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: left;
+    gap: 8px;
+    padding: 10px;
+   
+    &:hover {
+    background-color: #A9A9A9;
+    color: black;
+    }
+  }
+
+  .active {
+  background-color: #A9A9A9;
+  color: black;  // qırmızı fon üzərində mətni ağ etmək üçün
   }
 
   ul {
@@ -28,7 +40,7 @@
     padding: 0;
 
     li {
-      margin-bottom: 20px;
+    
 
       a {
         color: #9E9E9E;

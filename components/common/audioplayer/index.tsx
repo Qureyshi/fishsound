@@ -4,6 +4,11 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 import Loop from "@/components/icons/Loop";
 import Close from "@/components/icons/Close";
+import Stop from "@/components/icons/Stop";
+import Play from "@/components/icons/Play";
+import Prev from "@/components/icons/Prev";
+import Next from "@/components/icons/Next";
+import Edit from "@/components/icons/Edit";
 
 function formatTime(sec: number) {
   const minutes = Math.floor(sec / 60);
@@ -155,13 +160,15 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
             <h1>{currentSong.title}</h1>
             <p>{currentSong.artist}</p>
           </div>
-
+        
+        <div className={styles.fullControlsWrapper}>
           <div className={styles.fullControls}>
-            <button onClick={handlePrevious}>⏮</button>
-            <button onClick={togglePlay}>{isPlaying ? "⏸" : "▶"}</button>
-            <button onClick={handleNext}>⏭</button>
+            <button onClick={handlePrevious}><Prev/></button>
+            <button onClick={togglePlay}>{isPlaying ? <Stop/> : <Play/>}</button>
+            <button onClick={handleNext}><Next/></button>
           </div>
 
+          
           <div className={styles.progressWrapper}>
             <input
               type="range"
@@ -171,14 +178,17 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
               onChange={handleSeek}
               className={styles.progress}
               style={{
-                background: `linear-gradient(to right, white ${progressPercent}%, black ${progressPercent}%)`,
+                background: `linear-gradient(to right, white ${progressPercent}%, #939393 ${progressPercent}%)`,
               }}
             />
-            <div className={styles.timeRow}>
-              <span>{formatTime(currentTime)}</span>
-              <span>{formatTime(duration)}</span>
-            </div>
+            <span  className={styles.currenttime}>{formatTime(currentTime)}</span>
+            <span  className={styles.duration}>{formatTime(duration)}</span>
+
+ 
+
           </div>
+          <div className={styles.edit}><Edit/></div>
+        </div>
         </>
       ) : (
         <>
@@ -197,10 +207,11 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
           </div>
 
           <div className={styles.controls}>
-            <button onClick={handlePrevious}>⏮</button>
-            <button onClick={togglePlay}>{isPlaying ? "⏸" : "▶"}</button>
-            <button onClick={handleNext}>⏭</button>
-
+            <div>
+              <button onClick={handlePrevious}><Prev/></button>
+              <button onClick={togglePlay}>{isPlaying ? <Stop/> : <Play/>}</button>
+              <button onClick={handleNext}><Next/></button>
+            </div>
             <div className={styles.progressWrapper}>
               <input
                 type="range"
@@ -210,7 +221,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
                 onChange={handleSeek}
                 className={styles.progress}
                 style={{
-                  background: `linear-gradient(to right, white ${progressPercent}%, black ${progressPercent}%)`,
+                  background: `linear-gradient(to right, white ${progressPercent}%, #939393 ${progressPercent}%)`,
                 }}
               />
               <div className={styles.timeRow}>

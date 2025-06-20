@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 
 export default function ProfilAccountContainer() {
   return (
+    <div className='main'>
     <div className={styles.container}>
       <section className={styles.accountSection}>
         <h2>Hesab məlumatları</h2>
@@ -53,6 +54,7 @@ export default function ProfilAccountContainer() {
           </div>
         </div>
       </section>
+    </div>
     </div>
   );
 }

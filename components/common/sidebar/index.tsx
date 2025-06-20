@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'  // burada əlavə olunur
 import styles from './styles.module.scss'
 import Search from '@/components/icons/Search'
 import Home from '@/components/icons/Home'
@@ -11,10 +12,13 @@ import Playlist from '@/components/icons/Playlist'
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()  // hazırkı URL path
+
+  // Aktiv linki yoxlamaq üçün funksiya
+  const isActive = (href: string) => pathname === href
 
   return (
     <>
-      {/* Hamburger button - mobile */}
       <button
         aria-label='Open Sidebar'
         className={styles.hamburger}
@@ -23,32 +27,54 @@ export default function Sidebar() {
         ☰
       </button>
 
-      {/* Overlay for mobile */}
       {open && <div className={styles.overlay} onClick={() => setOpen(false)}></div>}
 
-      {/* Sidebar menu */}
       <aside className={`${styles.sidebar} ${open ? styles.open : ''}`}>
         <nav>
           <ul>
             <li>
-              <Link  className={styles.link} href="/profile"><Home/>Ana Səhifə</Link>
+              <Link 
+                href="/profile"
+                className={`${styles.link} ${isActive('/profile') ? styles.active : ''}`}
+              >
+                <Home />Ana Səhifə
+              </Link>
             </li>
             <li>
-              <Link  className={styles.link} href="/profile/search"><Search/>Axtar</Link>
+              <Link 
+                href="/profile/search" 
+                className={`${styles.link} ${isActive('/profile/search') ? styles.active : ''}`}
+              >
+                <Search />Axtar
+              </Link>
             </li>
             <li>
-              <Link  className={styles.link} href="/profile/location"><Location/>Məkanlar</Link>
+              <Link 
+                href="/profile/location" 
+                className={`${styles.link} ${isActive('/profile/location') ? styles.active : ''}`}
+              >
+                <Location />Məkanlar
+              </Link>
             </li>
             <li>
-              <Link  className={styles.link} href="/profile/announce"><Announce/>Anonslar</Link>
+              <Link 
+                href="/profile/announce" 
+                className={`${styles.link} ${isActive('/profile/announce') ? styles.active : ''}`}
+              >
+                <Announce />Anonslar
+              </Link>
             </li>
             <li>
-              <Link  className={styles.link} href="/profile/playlist"><Playlist/>Pleylistlərim</Link>
+              <Link 
+                href="/profile/playlist" 
+                className={`${styles.link} ${isActive('/profile/playlist') ? styles.active : ''}`}
+              >
+                <Playlist />Pleylistlərim
+              </Link>
             </li>
           </ul>
         </nav>
         <hr />
-        {/* Seçilmişlər */}
         <h3>Seçilmişlər</h3>
         <ul>
           <li>Playlistin Adı</li>

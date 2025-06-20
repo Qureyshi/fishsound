@@ -38,6 +38,7 @@ const playlists = [
 
 export default function ProfilHomeContainer() {
   return (
+    <div className='main'>
     <div className={styles.container}>
       
 
@@ -137,6 +138,6 @@ export default function ProfilHomeContainer() {
 
 
       </div>
-    
+    </div>
   );
 }

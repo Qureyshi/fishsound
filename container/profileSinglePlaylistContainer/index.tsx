@@ -75,6 +75,43 @@ const ProfilSinglePlaylistContainer = () => {
   { id: 4, place: "Zeyd Kabab", address: "Bakı, Təbriz, küç.,208C" },
 ];
 
+
+const addsongs = [
+  {
+    id: 1,
+    title: "Kingdom",
+    artist: "Miyagi",
+    album: "Buster Keaton",
+    duration: "3:31",
+    cover: "/images/singleplaylist.png",
+  },
+  {
+    id: 2,
+    title: "Kingdom",
+    artist: "Miyagi",
+    album: "Buster Keaton",
+    duration: "3:31",
+    cover: "/images/singleplaylist.png",
+  },
+  {
+    id: 3,
+    title: "Kingdom",
+    artist: "Miyagi",
+    album: "Buster Keaton",
+    duration: "3:31",
+    cover: "/images/singleplaylist.png",
+  },
+  {
+    id: 4,
+    title: "Kingdom",
+    artist: "Miyagi",
+    album: "Buster Keaton",
+    duration: "3:31",
+    cover: "/images/singleplaylist.png",
+  },
+];
+
+
 const handleConfirm = (selectedIds: number[]) => {
   console.log("Seçilmişlər valideynə:", selectedIds);
   // burda API çağırışı və ya başqa əməliyyatlar edə bilərsən
@@ -186,8 +223,10 @@ const handleConfirm = (selectedIds: number[]) => {
         />
       )}
       {isAddModalOpen && (
-        <AddSongModal onClose={() => setIsAddModalOpen(false)} />
+        <AddSongModal songs={addsongs} onClose={() => setIsAddModalOpen(false)} onConfirm={handleConfirm}  />
       )}
+       
+       
  
     </>
   );

@@ -42,14 +42,7 @@ const LocationModal: React.FC<Props> = ({ items, onClose, onConfirm }) => {
     <div className={styles.backdrop} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.topRow}>
-          <label className={styles.selectAll}>
-            <input
-              type="checkbox"
-              checked={isAllSelected}
-              onChange={toggleSelectAll}
-            />
-            Hamısını seç
-          </label>
+          
 
           <div className={styles.header}>
             <span>Məkan</span>
@@ -74,8 +67,20 @@ const LocationModal: React.FC<Props> = ({ items, onClose, onConfirm }) => {
             </div>
           ))}
         </div>
-
+        <div className={styles.checkbox}>
+          <div>
+          <label className={styles.selectAll}>
+            <input
+              type="checkbox"
+              checked={isAllSelected}
+              onChange={toggleSelectAll}
+            />
+            Hamısını seç
+          </label>
+          </div>
+        </div>  
         <div className={styles.footer}>
+          
           <button className={styles.confirmBtn} onClick={handleConfirm}>
             Təsdiqə
           </button>

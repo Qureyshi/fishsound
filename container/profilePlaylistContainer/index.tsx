@@ -23,6 +23,7 @@ export default function PlaylistContainer() {
   const [playlistName, setPlaylistName] = useState("Playlist № 1");
 
   return (
+    <div className='main'>
     <div className={styles.container}>
       <div className={styles.heading}>
         <h1>Playlistlərim</h1>
@@ -68,6 +69,7 @@ export default function PlaylistContainer() {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }
