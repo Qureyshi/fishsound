@@ -44,33 +44,40 @@ const AddSongModal: React.FC<Props> = ({ songs, onClose, onConfirm }) => {
   return (
     <div className={styles.backdrop} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <div className={styles.header}>
-          <span>Mahnı adı</span>
-          <span>İfaçı</span>
-          <span>Albom</span>
-          <span>Dəqiqə</span>
-        </div>
+        <div className={styles.scrollWrapper}>
+          <div className={styles.header}>
+            <span></span>
+            <span>Mahnı adı</span>
+            <span>İfaçı</span>
+            <span>Albom</span>
+            <span>Dəqiqə</span>
+          </div>
 
-        <div className={styles.list}>
-          {songs.map((song, idx) => (
-            <div
-              key={song.id}
-              className={`${styles.row} ${
-                selectedIds.includes(song.id) ? styles.selected : ""
-              }`}
-              onClick={() => toggleSelect(song.id)}
-            >
-              <span className={styles.index}>{idx + 1}</span>
-              <div className={styles.card}>
-                <img src={song.cover} alt={song.title} className={styles.cover} />
-                <span className={styles.title}>{song.title}</span>
-                <span className={styles.artist}>{song.artist}</span>
-                <span className={styles.album}>{song.album}</span>
-                <span className={styles.duration}>{song.duration}</span>
-                <span className={styles.dots}>...</span>
+          <div className={styles.list}>
+            {songs.map((song, idx) => (
+              <div
+                key={song.id}
+                className={`${styles.row} ${
+                  selectedIds.includes(song.id) ? styles.selected : ""
+                }`}
+                onClick={() => toggleSelect(song.id)}
+              >
+                <span className={styles.index}>{idx + 1}</span>
+                <div className={styles.card}>
+                  <img
+                    src={song.cover}
+                    alt={song.title}
+                    className={styles.cover}
+                  />
+                  <span className={styles.title}>{song.title}</span>
+                  <span className={styles.artist}>{song.artist}</span>
+                  <span className={styles.album}>{song.album}</span>
+                  <span className={styles.duration}>{song.duration}</span>
+                  <span className={styles.dots}>...</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className={styles.selectAllRow}>

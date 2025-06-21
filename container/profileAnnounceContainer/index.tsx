@@ -145,7 +145,8 @@ export default function ProfilAnnounceContainer() {
           </div>
 
           <div className={styles.crt_btn} onClick={() => setIsFirstModalOpen(true)}>
-            <Add /> Anons əlavə et
+            <div>Anons əlavə et</div>
+            <div><Add /></div>
           </div>
         </div>
 

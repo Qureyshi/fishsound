@@ -29,8 +29,8 @@ export default function PlaylistContainer() {
       <div className={styles.heading}>
         <h1>Playlistlərim</h1>
         <div className={styles.crt_btn} onClick={() => setIsModalOpen(true)}>
-          <Create />
-          Playlist yarat
+          <div><Create /></div>
+          <div>Playlist yarat</div> 
         </div>
       </div>
 

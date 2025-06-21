@@ -62,7 +62,7 @@
     display: flex;
     align-items: center;
     border-radius: 2rem;
-    padding: 10px;
+    padding: 10px 20px;
     background: #ffffff;
 
     .input {
@@ -123,6 +123,7 @@
     color: #9E9E9E;
     display: flex;
     align-items: center;
+    gap: 15px;
     padding: 10px 15px;
     border-radius: 2rem;
     cursor: pointer;

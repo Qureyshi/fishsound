@@ -21,22 +21,35 @@
   border-radius: 10px;
   width: 95%;
   max-width: 700px;
+
+  @include mobile {
+    padding: 1rem;
+  }
+}
+
+.scrollWrapper {
+  overflow-x: auto;
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
   font-weight: bold;
   font-size: 14px;
-  padding: 0 1rem;
   color: #3d3d3d;
   margin-bottom: 1rem;
+  padding: 0 1rem;
+  gap: 1rem;
+  min-width: 600px;
+  margin-left: 20px;
 }
 
 .list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  min-width: 600px;
 }
 
 .row {
@@ -50,17 +63,19 @@
   width: 20px;
   font-weight: bold;
   color: #444;
+  text-align: center;
 }
 
 .card {
   flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
   background: #fff;
   border-radius: 10px;
   padding: 1rem;
-  display: grid;
-  grid-template-columns: 40px 1fr 1fr 1fr 50px 20px;
-  align-items: center;
   gap: 1rem;
+  min-width: 600px;
 }
 
 .cover {
@@ -70,7 +85,10 @@
   object-fit: cover;
 }
 
-.title, .artist, .album, .duration {
+.title,
+.artist,
+.album,
+.duration {
   font-size: 14px;
   color: #333;
 }
@@ -90,6 +108,10 @@
   display: flex;
   justify-content: flex-end;
   margin-top: 1.5rem;
+
+  @include mobile {
+    justify-content: center;
+  }
 }
 
 .selectAll {
@@ -114,4 +136,10 @@
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
+
+  @include mobile {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 14px;
+  }
 }

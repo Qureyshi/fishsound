@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation' // burada əlavə olunur
+import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import styles from './styles.module.scss'
 import Search from '@/components/icons/Search'
 import Home from '@/components/icons/Home'
@@ -12,12 +13,17 @@ import Playlist from '@/components/icons/Playlist'
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false)
-  const pathname = usePathname() // hazırkı URL path
+  const pathname = usePathname()
   const [activeTab, setActiveTab] = useState<'playlists' | 'announcements'>('playlists')
 
-  const items = Array(5).fill('Pleylistin adı')
+  const items = [
+    { title: 'Pleylist 1', image: "/images/singleplaylist.png" },
+    { title: 'Pleylist 2', image: "/images/singleplaylist.png" },
+    { title: 'Pleylist 3', image: "/images/playlist_cover.jpg" },
+    { title: 'Pleylist 4', image: "/images/singleplaylist.png" },
+    { title: 'Pleylist 5', image: "/images/playlist_cover.jpg" },
+  ]
 
-  // Aktiv linki yoxlamaq üçün funksiya
   const isActive = (href: string) => pathname === href
 
   return (
@@ -97,10 +103,18 @@ export default function Sidebar() {
           </div>
 
           <div className={styles.list}>
-            {items.map((title, idx) => (
+            {items.map((item, idx) => (
               <div key={idx} className={styles.item}>
-                <div className={styles.thumbnail} />
-                <span>{title}</span>
+                <div className={styles.thumbnail}>
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={30}
+                    height={30}
+                    style={{ borderRadius: '6px' }}
+                  />
+                </div>
+                <span>{item.title}</span>
               </div>
             ))}
           </div>
