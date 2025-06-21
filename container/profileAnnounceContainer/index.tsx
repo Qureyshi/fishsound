@@ -1,12 +1,12 @@
 "use client";
 import React, { useState, useRef, useEffect } from 'react';
 import styles from "./styles.module.scss";
-import Create from '@/components/icons/Create';
 import Search from '@/components/icons/Search';
 import Arrowdown from '@/components/icons/Arrowdown';
 import Stop from '@/components/icons/Stop';
 import Play from '@/components/icons/Play';
 import Edit from '@/components/icons/Edit';
+import Add from '@/components/icons/Add';
 
 export default function ProfilAnnounceContainer() {
   const [isFirstModalOpen, setIsFirstModalOpen] = useState(false);
@@ -145,7 +145,7 @@ export default function ProfilAnnounceContainer() {
           </div>
 
           <div className={styles.crt_btn} onClick={() => setIsFirstModalOpen(true)}>
-            <Create /> Anons əlavə et
+            <Add /> Anons əlavə et
           </div>
         </div>
 

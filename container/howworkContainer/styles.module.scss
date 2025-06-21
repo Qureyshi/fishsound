@@ -35,6 +35,13 @@
     }
   }
 }
+.arrow{
+  margin-top: 25px;
+
+  @include tablet{
+    display: none;
+  }
+}
 
 $gap: 1rem;
 
@@ -71,11 +78,14 @@ $gap: 1rem;
   text-align: center;
 }
 
-.faq {
-  h2 {
-    font-family: "SpaceGrotesk-Bold", sans-serif;
+
+  .item_button:hover{
+    background-color: #0c8bcf;
+    cursor: pointer;
   }
 
+.faq {
+ 
   .faq_row {
     display: flex;
     flex-wrap: wrap;
@@ -100,5 +110,10 @@ $gap: 1rem;
     background-color: #0d9eec;
     padding: 50px;
     border-radius: 3rem;
+  }
+
+  h2:hover{
+    background-color: #0c8bcf;
+    cursor: pointer;
   }
 }

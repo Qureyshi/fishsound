@@ -2,13 +2,14 @@ import React from 'react';
 import styles from "./styles.module.scss";
 import PlaylistCard from '@/components/common/playlistcard';
 import Search from '@/components/icons/Search';
+import Image from 'next/image';
 
 const playlists = [
-  { id: 1, title: 'Playlist 1', description: 'Playlist üçün', image: '/images/playlist_cover.jpg' },
-  { id: 2, title: 'Playlist 2', description: 'Playlist üçün', image: '/images/playlist_cover.jpg' },
-  { id: 3, title: 'Playlist 3', description: 'Playlist üçün', image: '/images/playlist_cover.jpg' },
-  { id: 4, title: 'Playlist 4', description: 'Playlist üçün', image: '/images/playlist_cover.jpg' },
-  { id: 5, title: 'Playlist 5', description: 'Playlist üçün', image: '/images/playlist_cover.jpg' },
+  { id: 1, title: "Playlist 1", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 2, title: "Playlist 2", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 3, title: "Playlist 3", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 4, title: "Playlist 4", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 5, title: "Playlist 5", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
 ];
 
 export default function ProfilHomeContainer() {
@@ -32,6 +33,7 @@ export default function ProfilHomeContainer() {
                 title={playlist.title}
                 description={playlist.description}
                 image={playlist.image}
+                slug={`/profile/playlist/${playlist.slug}`}
               />
             ))}
           </div>
@@ -45,7 +47,13 @@ export default function ProfilHomeContainer() {
             <button>Pleylistə get</button>
           </div>
           <div className={styles.cardBox}>
-            {/* Yaşıl qutu ilə təmsil edilir */}
+            <Image
+              src="/images/singleplaylist.png"
+              alt={"title"}
+              width={300}
+              height={300}
+              className={styles.image}
+            />
           </div>
         </section>
 
@@ -58,6 +66,7 @@ export default function ProfilHomeContainer() {
                 title={playlist.title}
                 description={playlist.description}
                 image={playlist.image}
+                slug={`/profile/playlist/${playlist.slug}`}
               />
             ))}
           </div>
@@ -72,6 +81,7 @@ export default function ProfilHomeContainer() {
                 title={playlist.title}
                 description={playlist.description}
                 image={playlist.image}
+                slug={`/profile/playlist/${playlist.slug}`}
               />
             ))}
           </div>

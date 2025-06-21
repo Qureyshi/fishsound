@@ -4,36 +4,11 @@ import PlaylistCard from '@/components/common/playlistcard';
 import Search from '@/components/icons/Search';
 
 const playlists = [
-  {
-    id: 1,
-    title: 'Playlist 1',
-    description: 'Playlist üçün',
-    image: '/images/playlist_cover.jpg',
-  },
-  {
-    id: 2,
-    title: 'Playlist 2',
-    description: 'Playlist üçün',
-    image: '/images/playlist_cover.jpg',
-  },
-  {
-    id: 3,
-    title: 'Playlist 3',
-    description: 'Playlist üçün',
-    image: '/images/playlist_cover.jpg',
-  },
-  {
-    id: 4,
-    title: 'Playlist 4',
-    description: 'Playlist üçün',
-    image: '/images/playlist_cover.jpg',
-  },
-  {
-    id: 5,
-    title: 'Playlist 5',
-    description: 'Playlist üçün',
-    image: '/images/playlist_cover.jpg',
-  },
+  { id: 1, title: "Playlist 1", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 2, title: "Playlist 2", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 3, title: "Playlist 3", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 4, title: "Playlist 4", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 5, title: "Playlist 5", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
 ];
 
 export default function SearchContainer() {
@@ -61,6 +36,7 @@ export default function SearchContainer() {
                 title={playlist.title}
                 description={playlist.description}
                 image={playlist.image}
+                slug={`/profile/playlist/${playlist.slug}`}
               />
             ))}
           </div>
@@ -75,6 +51,7 @@ export default function SearchContainer() {
                 title={playlist.title}
                 description={playlist.description}
                 image={playlist.image}
+                slug={`/profile/playlist/${playlist.slug}`}
               />
             ))}
           </div>
@@ -89,6 +66,7 @@ export default function SearchContainer() {
                 title={playlist.title}
                 description={playlist.description}
                 image={playlist.image}
+                slug={`/profile/playlist/${playlist.slug}`}
               />
             ))}
           </div>

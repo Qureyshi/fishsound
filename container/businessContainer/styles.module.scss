@@ -3,6 +3,7 @@
 
 .business_features {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -14,6 +15,7 @@
   div {
     font-size: 35px;
     margin-bottom: 20px;
+    font-weight: 300;
   }
 }
 
@@ -23,8 +25,19 @@
   margin-top: 70px;
   h2 {
     background-color: #0d9eec;
-    padding: 50px 150px;
+    padding: 50px 100px;
     border-radius: 45px;
     text-align: center;
+
+
+    @include mobile{
+      padding: 30px 70px;
+    }
   }
+
+  h2:hover{
+    background-color: #0c8bcf;
+    cursor: pointer;
+  }
+
 }

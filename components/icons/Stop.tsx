@@ -12,9 +12,9 @@ const Stop = ({ color = "currentColor", width = "24px", height = "24px" }: Props
     width={width}
     height={height}
     viewBox="0 0 24 24"
-    fill="none"
+    fill={color}
     stroke={color}
-    strokeWidth={2}
+    strokeWidth={0}
     strokeLinecap="round"
     strokeLinejoin="round"
   >

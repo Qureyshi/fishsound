@@ -11,12 +11,13 @@ export default function HowworkContainer() {
         <PageHeader title="Necə işləyir?" />
 
         <div className="d_flex">
-          <h2 className="m_b">Sürətli keçid edin</h2>
+          <h2>Sürətli keçid edin</h2>
           <Image
             src="/images/arrow.svg"
             alt="Logo"
-            width={300}
+            width={400}
             height={100}
+            className={styles.arrow}
           />
         </div>
 

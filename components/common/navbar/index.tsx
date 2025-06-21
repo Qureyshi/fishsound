@@ -14,6 +14,7 @@ export default function Navbar() {
   return (
      <div className="body_container">
     <div className={styles.navbar}>
+      <Link href="/">
       <Image
         className={styles.logo}
         src="/images/logo/logo0.svg"
@@ -21,6 +22,7 @@ export default function Navbar() {
         width={100}
         height={100}
       />
+      </Link>
 
       <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <Close/> : <Menu/>}

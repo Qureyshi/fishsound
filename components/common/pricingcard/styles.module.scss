@@ -49,8 +49,18 @@
     &.purple {
       background-color: #710DEC;
     }
+    &.purple:hover {
+      background-color: #650cd2;
+      cursor: pointer;
+    }
   }
   .feature-list{
     font-size: 32px;
   }
+}
+
+.price_btn:hover {
+  background-color: #0f86c7;
+  cursor: pointer;
+
 }

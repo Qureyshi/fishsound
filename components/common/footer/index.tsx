@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -9,17 +10,17 @@ export default function Footer() {
         <div className={styles.footer}>
           <div className={styles['footer-text']}>
             <h3 className={styles['section-title']}>Saytın xəritəsi</h3>
-            <div className={styles.link}>Ana səhifə</div>
-            <div className={styles.link}>Necə işləyir?</div>
-            <div className={styles.link}>Biznes tipləri</div>
-            <div className={styles.link}>Qiymət</div>
-            <div className={styles.link}>Əlaqə</div>
+            <div><Link className={styles.link} href="/">Ana səhifə</Link></div>
+            <div><Link className={styles.link} href="/howwork">Necə işləyir?</Link></div>
+            <div><Link className={styles.link} href="/business">Biznes tipləri</Link></div>
+            <div><Link className={styles.link} href="/pricing">Qiymət</Link></div>
+            <div><Link className={styles.link} href="/contact">Əlaqə</Link></div>
           </div>
 
           <div className={styles['sosial-media-block']}>
             <h3 className={styles['section-title']}>Sosial media</h3>
-            <div className={styles.link}>Instagram</div>
-            <div className={styles.link}>Facebook</div>
+            <div><Link className={styles.link} href="/howwork">Instagram</Link></div>
+            <div><Link className={styles.link} href="/howwork">Facebook</Link></div>
           </div>
 
           <div className={styles['abun-card']}>
@@ -45,7 +46,7 @@ export default function Footer() {
               </label>
             </div>
           </div>
-
+          <Link className={styles.link} href="/">
           <Image
             className={styles.logo}
             src="/images/logo/logo0.svg"
@@ -53,6 +54,7 @@ export default function Footer() {
             width={100}
             height={100}
           />
+          </Link>
         </div>
 
         <div className={styles.copyright}>

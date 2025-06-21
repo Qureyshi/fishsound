@@ -2,9 +2,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./styles.module.scss";
 import Search from "@/components/icons/Search";
-import Create from "@/components/icons/Create";
 import Arrowdown from "@/components/icons/Arrowdown";
 import Edit from "@/components/icons/Edit";
+import Add from "@/components/icons/Add";
 
 const locations = [
   { id: 1, place: "Zeyd Kabab", address: "Bakı, Tabriz küç, 20B", status: "Status", song: "Kingdom - Miyagi" },
@@ -67,8 +67,8 @@ export default function LocationContainer() {
  
 
           <div className={styles.crt_btn}>
-            <span>  Məkan əlavə yarat</span> 
-            <Create/>
+            <span>  Məkan əlavə et</span> 
+            <Add/>
           </div>
         </div>
 

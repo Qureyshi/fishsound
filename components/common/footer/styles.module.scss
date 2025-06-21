@@ -18,8 +18,10 @@
 
 .link{
   font-size: 20px;
-  margin-bottom: 10px;
   font-weight: 300;
+  line-height: 30px;
+  color: white;
+  text-decoration: none;
 }
 
 .input-button-wrapper {
@@ -36,6 +38,13 @@
   border-radius: 2rem;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  outline: none;
+  border: none;
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
 }
 
 .abun-ol-button {

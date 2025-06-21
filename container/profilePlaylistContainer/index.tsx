@@ -5,17 +5,18 @@ import PlaylistCard from "@/components/common/playlistcard";
 import Create from "@/components/icons/Create";
 
 const playlists = [
-  { id: 1, title: "Playlist 1", description: "Playlist üçün", image: "/images/playlist_cover.jpg" },
-  { id: 2, title: "Playlist 2", description: "Playlist üçün", image: "/images/playlist_cover.jpg" },
-  { id: 3, title: "Playlist 3", description: "Playlist üçün", image: "/images/playlist_cover.jpg" },
-  { id: 4, title: "Playlist 4", description: "Playlist üçün", image: "/images/playlist_cover.jpg" },
-  { id: 5, title: "Playlist 5", description: "Playlist üçün", image: "/images/playlist_cover.jpg" },
-  { id: 6, title: "Playlist 6", description: "Playlist üçün", image: "/images/playlist_cover.jpg" },
-  { id: 7, title: "Playlist 7", description: "Playlist üçün", image: "/images/playlist_cover.jpg" },
-  { id: 8, title: "Playlist 8", description: "Playlist üçün", image: "/images/playlist_cover.jpg" },
-  { id: 9, title: "Playlist 9", description: "Playlist üçün", image: "/images/playlist_cover.jpg" },
-  { id: 10, title: "Playlist 10", description: "Playlist üçün", image: "/images/playlist_cover.jpg" },
+  { id: 1, title: "Playlist 1", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 2, title: "Playlist 2", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 3, title: "Playlist 3", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 4, title: "Playlist 4", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 5, title: "Playlist 5", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 6, title: "Playlist 6", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 7, title: "Playlist 7", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 8, title: "Playlist 8", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 9, title: "Playlist 9", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
+  { id: 10, title: "Playlist 10", description: "Playlist üçün", image: "/images/playlist_cover.jpg", slug: "slug" },
 ];
+
 
 
 export default function PlaylistContainer() {
@@ -40,6 +41,7 @@ export default function PlaylistContainer() {
             title={playlist.title}
             description={playlist.description}
             image={playlist.image}
+            slug={`/profile/playlist/${playlist.slug}`}
           />
         ))}
       </div>

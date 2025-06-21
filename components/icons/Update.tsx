@@ -18,7 +18,9 @@ const Update = ({ color = "currentColor", width = "24px", height = "24px" }: Pro
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/> 
+     <path d="M1.75 24.084H24.25" stroke="white"/>
+<path d="M6.75 19.084V14.084L19.25 1.58398L24.25 6.58398L11.75 19.084H6.75Z"/>
+<path d="M15.5 5.33398L20.5 10.334" stroke="white"/> 
   </svg>
 );
 

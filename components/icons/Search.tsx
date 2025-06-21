@@ -12,9 +12,9 @@ const Search = ({ color = "currentColor", width = "24px", height = "24px" }: Pro
     width={width}
     height={height}
     viewBox="0 0 24 24"
-    fill="none"
+    fill={color}
     stroke={color}
-    strokeWidth={1}
+    strokeWidth={0}
     strokeLinecap="round"
     strokeLinejoin="round"
   >
