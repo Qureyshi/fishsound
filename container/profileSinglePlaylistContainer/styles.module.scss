@@ -29,14 +29,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  @include lg_tablet {
-    align-items: center;
-  }
-
   text-align: center;
   color: #757575;
   padding: 20px 0;
+  @include lg_tablet {
+    align-items: center;
+  }
 }
 
 .label {

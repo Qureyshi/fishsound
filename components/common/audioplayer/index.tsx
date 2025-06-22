@@ -120,7 +120,8 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
     } else {
       audioRef.current.pause();
     }
-  }, [currentId, isPlaying]);
+  }, [currentId, isPlaying, currentSong]);
+
 
   const progressPercent = (currentTime / duration) * 100 || 0;
 

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./styles.module.scss";
+import Image from "next/image";
 
 interface Song {
   id: number;
@@ -64,11 +65,7 @@ const AddSongModal: React.FC<Props> = ({ songs, onClose, onConfirm }) => {
               >
                 <span className={styles.index}>{idx + 1}</span>
                 <div className={styles.card}>
-                  <img
-                    src={song.cover}
-                    alt={song.title}
-                    className={styles.cover}
-                  />
+                  <Image src={song.cover} alt={song.title}className={styles.cover} width={100} height={100} />
                   <span className={styles.title}>{song.title}</span>
                   <span className={styles.artist}>{song.artist}</span>
                   <span className={styles.album}>{song.album}</span>

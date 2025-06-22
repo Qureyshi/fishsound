@@ -10,7 +10,7 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
 
-  @include lg_tablet {
+  @include md_desktop {
     grid-template-columns: repeat(4, 1fr);
   }
 

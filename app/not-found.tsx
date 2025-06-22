@@ -11,16 +11,36 @@ const Custom404 = () => {
         className={styles.logo}
         src="/images/logo/logo0.svg"
         alt="Logo"
-        width={100}
-        height={100}
+        width={70}
+        height={70}
       /> 
       <p className={styles.message}>
         Axtardığınız səhifə tapılmayıb və ya işləmir
       </p>
-      <h1 className={styles.errorCode}>404</h1>
+      <Image
+        className={styles.errorCode}
+        src="/images/404.png"
+        alt="Logo"
+        width={853}
+        height={337}
+      /> 
       <Link href="/" className={styles.link}>
         Ana səhifəyə qayıt
       </Link>
+      <Image
+        className={styles.ellipse1}
+        src="/images/Ellipse1.png"
+        alt="Logo"
+        width={814}
+        height={871}
+      /> 
+      <Image
+        className={styles.ellipse2}
+        src="/images/Ellipse2.png"
+        alt="Logo"
+        width={1437}
+        height={715}
+      /> 
     </div>
   );
 };

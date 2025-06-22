@@ -7,6 +7,7 @@ import Stop from '@/components/icons/Stop';
 import Play from '@/components/icons/Play';
 import Edit from '@/components/icons/Edit';
 import Add from '@/components/icons/Add';
+import File from '@/components/icons/File';
 
 export default function ProfilAnnounceContainer() {
   const [isFirstModalOpen, setIsFirstModalOpen] = useState(false);
@@ -218,7 +219,7 @@ export default function ProfilAnnounceContainer() {
                 onDragOver={(e) => e.preventDefault()}
                 onDrop={handleDrop}
               >
-                <div className={styles.iconLarge}>⬆️</div>
+                <div className={styles.iconLarge}><File/></div>
                 <p>Drag and Drop here</p>
                 <span>or</span>
                 <label className={styles.selectFileBtn}>
